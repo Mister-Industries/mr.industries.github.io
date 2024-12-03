@@ -1,0 +1,236 @@
+<html><head><base href="." /><title>MR.INDUSTRIES | Future Electronics</title><style>
+  :root {
+    --primary: #f5e7f2;
+    --dark: #201215;
+    --light: #f0f0f0;
+  }
+  
+  @font-face {
+    font-family: 'Geometos';
+    src: url('https://fonts.cdnfonts.com/css/geometos');
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Space Mono", monospace;
+  }
+  
+  body {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: var(--light);
+    min-height: 100vh;
+    position: relative;
+  }
+  
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 26, 26, 0.2);
+    z-index: 0;
+  }
+  
+  nav {
+    background: #201215;
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid var(--primary);
+    z-index: 1000;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+    font-family: 'Geometos', sans-serif;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .nav-links a {
+    color: var(--light);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border: 2px solid transparent;
+    transition: all 0.3s;
+  }
+  
+  .nav-links a:hover {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    min-height: 100vh;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .pcb-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .pcb {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    fill: var(--primary);
+    transform-style: preserve-3d;
+    animation: float 6s ease-in-out infinite;
+    cursor: pointer;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotateY(0); }
+    50% { transform: translateY(-20px) rotateY(10deg); }
+  }
+  
+  .coming-soon {
+    font-size: clamp(2rem, 8vw, 4rem);
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    color: #f3ecf1;
+    text-shadow: 4px 4px 0px #f88cc5;
+    font-family: 'Geometos', sans-serif;
+    text-align: center;
+    padding: 0 1rem;
+  }
+  
+  .email-signup {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+    width: 100%;
+    max-width: 600px;
+    justify-content: center;
+  }
+  
+  input[type="email"] {
+    padding: 1rem;
+    width: 100%;
+    max-width: 300px;
+    background: rgba(26, 26, 26, 0.8);
+    border: 3px solid var(--primary);
+    color: var(--light);
+    font-size: 1rem;
+  }
+  
+  button {
+    padding: 1rem 2rem;
+    background: var(--primary);
+    border: none;
+    color: var(--dark);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    font-family: 'Geometos', sans-serif;
+    white-space: nowrap;
+  }
+  
+  button:hover {
+    background: var(--light);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 768px) {
+    .email-signup {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    input[type="email"] {
+      width: 100%;
+    }
+    
+    button {
+      width: 100%;
+    }
+  }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/geometos" rel="stylesheet">
+  </head>
+  <body>
+    <nav>
+      <div class="logo">MR.INDUSTRIES</div>
+      <div class="nav-links">
+        <a href="https://mr.industries/iota">Iota</a>
+        <a href="https://mr.industries/about">About</a>
+        <a href="https://mr.industries/store">Store</a>
+      </div>
+    </nav>
+  
+    <main>
+      <h1 class="coming-soon">Coming Soon...</h1>
+
+      <div class="pcb-container">
+        <img class="pcb" src="pcb.png" alt="PCB Device">
+      </div>
+      
+      <div class="email-signup">
+        <input type="email" placeholder="Enter your email">
+        <button>Sign Up</button>
+      </div>
+    </main>
+  
+  <script>
+  document.querySelector('.pcb').addEventListener('mousemove', (e) => {
+    const pcb = e.currentTarget;
+    const rect = pcb.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const rotateX = (y / rect.height - 0.5) * 30;
+    const rotateY = (x / rect.width - 0.5) * 30;
+    
+    pcb.style.transform = `perspective(1000px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
+  });
+  
+  document.querySelector('.pcb').addEventListener('mouseleave', (e) => {
+    e.currentTarget.style.transform = '';
+  });
+  
+  document.querySelector('button').addEventListener('click', () => {
+    const email = document.querySelector('input[type="email"]').value;
+    if (email) {
+      alert('Thank you for signing up! We\'ll keep you posted.');
+      document.querySelector('input[type="email"]').value = '';
+    }
+  });
+  </script>
+  </body></html>
