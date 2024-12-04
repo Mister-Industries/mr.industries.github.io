@@ -1,4 +1,4 @@
-<html><head><base href="." /><title>MR.INDUSTRIES | Future Electronics</title><style>
+<html><head><base href="." /><title>MR.INDUSTRIES | Building the Future</title><style>
   :root {
     --primary: #f5e7f2;
     --dark: #201215;
@@ -6,15 +6,25 @@
   }
   
   @font-face {
-    font-family: 'Geometos';
-    src: url('https://fonts.cdnfonts.com/css/geometos');
+    font-family: 'Geomatik';
+    src: url('Geomatik.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Geomatik';
+    src: url('Geomatik-Bold.otf') format('opentype');
+    font-weight: bold;
+    font-style: normal;
   }
   
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Space Mono", monospace;
+    font-weight: normal;
+    font-family: "Geomatik", sans-serif;
   }
   
   body {
@@ -40,7 +50,7 @@
   }
   
   nav {
-    background: #201215;
+    background: rgba(32, 18, 21, 0.75);
     backdrop-filter: blur(10px);
     padding: 1rem 2rem;
     position: fixed;
@@ -56,7 +66,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     color: var(--primary);
-    font-family: 'Geometos', sans-serif;
+    font-family: 'Geomatik', sans-serif;
   }
   
   .nav-links {
@@ -68,8 +78,9 @@
     color: var(--light);
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
+    font-weight: normal;
+    font-family: "Geomatik", sans-serif;
+    padding: 0.75rem 1rem;
     border: 2px solid transparent;
     transition: all 0.3s;
   }
@@ -84,7 +95,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 100px;
+    padding-top: 60px;
     min-height: 100vh;
     position: relative;
     z-index: 1;
@@ -93,12 +104,62 @@
   .pcb-container {
     position: relative;
     width: 100%;
-    max-width: 500px;
-    height: 500px;
-    margin: 2rem auto;
+    max-width: 450px;
+    height: 450px;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: -40px;
+    margin-bottom: -90px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  /* Tooltip Styles */
+  .pcb-container::after {
+    content: 'What\'s this?? (Click to learn more!)';
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 0.5rem;
+    background: rgba(32, 18, 21, 0.9);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    margin-bottom: -400px;
+  }
+
+  .pcb-container:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: 110%;
+  }
+  
+  .coming-soon {
+    font-size: clamp(2rem, 8vw, 4rem);
+    font-weight: bold;
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    color: #f3ecf1;
+    text-shadow: 4px 4px 0px #f88cc5;
+    font-family: 'Geomatik', sans-serif;
+    text-align: center;
+    padding: 0 1rem;
+    margin-bottom: -30px;
+    margin-top: -20px;
   }
   
   .pcb {
@@ -108,25 +169,11 @@
     fill: var(--primary);
     transform-style: preserve-3d;
     animation: float 6s ease-in-out infinite;
-    cursor: pointer;
   }
   
   @keyframes float {
     0%, 100% { transform: translateY(0) rotateY(0); }
     50% { transform: translateY(-20px) rotateY(10deg); }
-  }
-  
-  .coming-soon {
-    font-size: clamp(2rem, 8vw, 4rem);
-    font-weight: bold;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5rem;
-    color: #f3ecf1;
-    text-shadow: 4px 4px 0px #f88cc5;
-    font-family: 'Geometos', sans-serif;
-    text-align: center;
-    padding: 0 1rem;
   }
   
   .email-signup {
@@ -137,6 +184,8 @@
     width: 100%;
     max-width: 600px;
     justify-content: center;
+    position: relative;
+    z-index: 2;
   }
   
   input[type="email"] {
@@ -158,13 +207,40 @@
     cursor: pointer;
     transition: all 0.3s;
     text-transform: uppercase;
-    font-family: 'Geometos', sans-serif;
+    font-family: 'Geomatik', sans-serif;
     white-space: nowrap;
   }
   
   button:hover {
     background: var(--light);
     transform: translateY(-2px);
+  }
+
+  /* Status Message Styles */
+  .status-message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem 2rem;
+    border-radius: 4px;
+    font-weight: bold;
+    transform: translateX(200%);
+    transition: transform 0.3s ease;
+    z-index: 1001;
+  }
+
+  .status-message.success {
+    background: #4CAF50;
+    color: white;
+  }
+
+  .status-message.error {
+    background: #f44336;
+    color: white;
+  }
+
+  .status-message.show {
+    transform: translateX(0);
   }
 
   @media (max-width: 768px) {
@@ -180,19 +256,29 @@
     button {
       width: 100%;
     }
+
+    .status-message {
+      top: auto;
+      bottom: 20px;
+      right: 20px;
+      left: 20px;
+      text-align: center;
+    }
   }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.cdnfonts.com/css/geometos" rel="stylesheet">
+  <link href="https://fonts.cdnfonts.com/css/Geomatik" rel="stylesheet">
   </head>
   <body>
+    <!-- Add status message div -->
+    <div class="status-message"></div>
+
     <nav>
       <div class="logo">MR.INDUSTRIES</div>
       <div class="nav-links">
-        <a href="https://mr.industries/">Iota</a>
-        <a href="https://mr.industries/">About</a>
-        <a href="https://mr.industries/">Store</a>
-        <a href="https://mr.industries/">Store</a>
+        <a href="https://mr.industries/">iota</a>
+        <a href="https://mr.industries/">about</a>
+        <a href="https://mr.industries/">store</a>
         <a href="https://github.com/Mister-Industries/iotaCore" class="github-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
         </a>
@@ -200,10 +286,14 @@
     </nav>
   
     <main>
-      <h1 class="coming-soon">Coming Soon...</h1>
+      <div class="coming-soon">
+        <img class="coming-soon" src="ComingSoon.png" alt="PCB Device">
+      </div>
 
       <div class="pcb-container">
-        <img class="pcb" src="pcb.png" alt="PCB Device">
+        <a href="https://github.com/Mister-Industries/iotaCore" target="_blank">
+          <img class="pcb" src="pcb.png" alt="PCB Device">
+        </a>
       </div>
       
       <div class="email-signup">
@@ -211,30 +301,76 @@
         <button>Sign Up</button>
       </div>
     </main>
-  
+
   <script>
-  document.querySelector('.pcb').addEventListener('mousemove', (e) => {
-    const pcb = e.currentTarget;
-    const rect = pcb.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    document.querySelector('button').addEventListener('click', async () => {
+        const emailInput = document.querySelector('input[type="email"]');
+        const email = emailInput.value;
+        
+        if (!email) {
+          showStatusMessage('Please enter an email address', 'error');
+          return;
+        }
     
-    const rotateX = (y / rect.height - 0.5) * 30;
-    const rotateY = (x / rect.width - 0.5) * 30;
+        if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+          showStatusMessage('Please enter a valid email address', 'error');
+          return;
+        }
     
-    pcb.style.transform = `perspective(1000px) rotateX(${-rotateX}deg) rotateY(${rotateY}deg)`;
-  });
-  
-  document.querySelector('.pcb').addEventListener('mouseleave', (e) => {
-    e.currentTarget.style.transform = '';
-  });
-  
-  document.querySelector('button').addEventListener('click', () => {
-    const email = document.querySelector('input[type="email"]').value;
-    if (email) {
-      alert('Thank you for signing up! We\'ll keep you posted.');
-      document.querySelector('input[type="email"]').value = '';
+        try {
+          const scriptURL = 'https://script.google.com/macros/s/AKfycbxKrh9knBzHFTiVCIcAPoA8-uGb8dDVURQQ0R0NcLEyeMxMKYlQEa2YmTqo3roiKo8QxQ/exec';
+          const submitButton = document.querySelector('button');
+          
+          // Disable button and show loading state
+          submitButton.disabled = true;
+          submitButton.textContent = 'Submitting...';
+          
+          const response = await fetch(scriptURL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: {
+              'Content-Type': 'text/plain;charset=utf-8',
+            },
+            body: JSON.stringify({ email: email })
+          });
+          
+          // Clear the input field
+          emailInput.value = '';
+          
+          // Reset button state
+          submitButton.disabled = false;
+          submitButton.textContent = 'Sign Up';
+          
+          // Show success message
+          showStatusMessage('Thanks for signing up! We\'ll be in touch soon.', 'success');
+          
+        } catch (error) {
+          console.error('Error:', error);
+          showStatusMessage('Something went wrong. Please try again later.', 'error');
+          
+          // Reset button on error
+          submitButton.disabled = false;
+          submitButton.textContent = 'Sign Up';
+        }
+    });
+    
+    // Status message function
+    function showStatusMessage(message, type) {
+        const statusElement = document.querySelector('.status-message');
+        statusElement.textContent = message;
+        statusElement.className = `status-message ${type}`;
+        
+        // Force reflow
+        statusElement.offsetHeight;
+        
+        // Show the message
+        statusElement.classList.add('show');
+        
+        // Hide after 3 seconds
+        setTimeout(() => {
+            statusElement.classList.remove('show');
+        }, 3000);
     }
-  });
-  </script>
+    </script>
+
   </body></html>
