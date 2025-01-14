@@ -1,7 +1,6 @@
 # iotaCore Landing Page
 
-This repository contains the landing page for iotaCore - the ultimate ESP32 development board for advanced wearables and IoT projects. The site showcases the features, specifications, and ecosystem of the iotaCore platform.
-
+This repository contains the landing page for iotaCore - the ultimate ESP32 development board for advanced wearables and IoT projects.
 ## About iotaCore
 
 iotaCore is an open-source IoT development platform designed for students and professionals working in:
@@ -18,14 +17,6 @@ The platform features:
 - 6-Axis IMU (Accelerometer + Gyroscope)
 - WiFi 802.11 b/g/n + Bluetooth 5.0 LE
 - Multiple interfaces: I2C, Serial, STEMMA/QWIIC, 6 Analog & 6 Digital I/O
-
-## Website Features
-
-- Responsive design with modern aesthetics
-- Interactive 3D board visualization
-- Project gallery showcase
-- Detailed specifications
-- Information about upcoming expansion modules
 
 ## Local Development
 
