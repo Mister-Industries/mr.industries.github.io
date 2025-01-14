@@ -1,390 +1,633 @@
-<html><head><base href="." /><title>MR.INDUSTRIES | Building the Future</title><style>
-  :root {
-    --primary: #f5e7f2;
-    --dark: #201215;
-    --light: #f0f0f0;
-  }
-  
-  @font-face {
-    font-family: 'Geomatik';
-    src: url('Geomatik.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-  }
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iotaCore - The Ultimate ESP32 for Advanced Wearables</title>
+<style>
+:root {
+  --primary: #0a0f2d;
+  --secondary: #1a1f4d;
+  --accent: #00f0ff;
+  --accent2: #ff3f8c;  
+  --text: #ffffff;
+  --grey: rgba(255,255,255,0.2);
+}
 
-  @font-face {
-    font-family: 'Geomatik';
-    src: url('Geomatik-Bold.otf') format('opentype');
-    font-weight: bold;
-    font-style: normal;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  @font-face {
-    font-family: 'Geometos';
-    src: url('https://fonts.cdnfonts.com/css/geometos');
-  }
-  
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-weight: normal;
-    font-family: "Geomatik", sans-serif;
-  }
-  
-  body {
-    background-image: url('background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    color: var(--light);
-    min-height: 100vh;
-    position: relative;
-  }
-  
-  body::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(26, 26, 26, 0.2);
-    z-index: 0;
-  }
-  
-  nav {
-    background: rgba(32, 18, 21, 0.75);
-    backdrop-filter: blur(10px);
-    padding: 1rem 2rem;
-    position: fixed;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 3px solid var(--primary);
-    z-index: 1000;
-  }
-  
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary);
-    font-family: 'Geomatik', sans-serif;
-  }
-  
-  .nav-links {
-    display: flex;
-    gap: 2rem;
-  }
-  
-  .nav-links a {
-    color: var(--light);
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: normal;
-    font-family: "Geomatik", sans-serif;
-    padding: 0.75rem 1rem;
-    border: 2px solid transparent;
-    transition: all 0.3s;
-  }
-  
-  .nav-links a:hover {
-    border: 2px solid var(--primary);
-    color: var(--primary);
-  }
-  
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding-top: 60px;
-    min-height: 100vh;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .pcb-container {
-    position: relative;
-    width: 100%;
-    max-width: 850px;
-    max-height: 850px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -50px;
-    margin-bottom: -200px;
-    cursor: pointer;
-    z-index: 1;
-  }
-  
-  /* Tooltip Styles */
-  /*.pcb-container::after {
-    content: 'What\'s this?? (Click to learn more!)';
-    position: absolute;
-    bottom: 2%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0.5rem 0.5rem;
-    background: rgba(32, 18, 21, 0.9);
-    color: var(--primary);
-    border: 2px solid var(--primary);
-    border-radius: 4px;
-    font-size: 0.9rem;
-    white-space: nowrap;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(5px);
-  }
+body {
+  background-color: var(--primary);
+  background-image: url('images/synthwavegrid.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-blend-mode: normal;
+  color: var(--text);
+  font-family: 'Space Grotesk', sans-serif;
+  overflow-x: hidden;
+  line-height: 1.6;
+  opacity: 1;
+}
 
-  .pcb-container:hover::after {
-    opacity: 1;
-    visibility: visible;
-    bottom: 110%;
-  }*/
-  
-  .coming-soon {
-    font-size: clamp(2rem, 8vw, 4rem);
-    font-weight: bold;
-    position: relative;
-    width: 100%;
-    max-width: 700px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    letter-spacing: 0.5rem;
-    color: #f3ecf1;
-    text-shadow: 4px 4px 0px #f88cc5;
-    font-family: 'Geomatik', sans-serif;
-    text-align: center;
-    padding: 0 1rem;
-    margin-top: -100px;
-    margin-bottom: -10px;
-    z-index: 2;
-  }
-  
-  .pcb {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    fill: var(--primary);
-    transform-style: preserve-3d;
-    animation: float 6s ease-in-out infinite;
-  }
-  
-  @keyframes float {
-    0%, 100% { transform: translateY(0) rotateY(0); }
-    50% { transform: translateY(-20px) rotateY(10deg); }
-  }
-  
-  .email-signup {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-    padding: 0 1rem;
-    width: 100%;
-    max-width: 600px;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
-    font-family: 'Geometos', sans-serif;
-  }
-  
-  input[type="email"] {
-    padding: 1rem;
-    width: 100%;
-    max-width: 300px;
-    background: rgba(26, 26, 26, 0.8);
-    border: 3px solid var(--primary);
-    color: var(--light);
-    font-size: 1rem;
-    font-family: 'Geometos', sans-serif;
-  }
-  
-  button {
-    padding: 1rem 2rem;
-    background: var(--primary);
-    border: none;
-    color: var(--dark);
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s;
-    text-transform: uppercase;
-    font-family: 'Geomatik', sans-serif;
-    white-space: nowrap;
-  }
-  
-  button:hover {
-    background: var(--light);
-    transform: translateY(-2px);
-  }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
 
-  /* Status Message Styles */
-  .status-message {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 1rem 2rem;
-    border-radius: 4px;
-    font-weight: bold;
-    transform: translateX(200%);
-    transition: transform 0.3s ease;
-    z-index: 1001;
-  }
+.nav {
+  position: fixed;
+  width: 100%;
+  padding: 1.5rem 0;
+  background: rgba(10, 15, 45, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+}
 
-  .status-message.success {
-    background: #4CAF50;
-    color: white;
-  }
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  .status-message.error {
-    background: #f44336;
-    color: white;
-  }
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
-  .status-message.show {
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.8;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.button {
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button-primary {
+  background: linear-gradient(45deg, var(--accent), var(--accent2));
+  color: var(--text);
+}
+
+.button-secondary {
+  border: 2px solid var(--text);
+  color: var(--text);
+}
+
+.device-visual {
+  perspective: 1000px;
+}
+
+.board-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  animation: float 3s ease-in-out infinite;
+  margin-left: 8rem;
+}
+
+.board-container:hover {
+  transform: rotateY(180deg);
+  animation: none;
+}
+
+.board-image, .board-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.board-back {
+  transform: rotateY(180deg);
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+  vertical-align: middle;
+  margin-left: 0.5rem;
+}
+
+.social-icon:hover {
+  color: var(--accent);
+}
+
+.modules {
+  padding: 6rem 0;
+  background: rgba(26, 31, 77, 0.85);
+}
+
+.modules .container {
+  padding-top: 2rem;
+}
+
+.section-title {
+  color: var(--text);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.modules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 3rem;
+  padding: 1rem;
+}
+
+.module-card {
+  background: transparent;
+  padding: 2rem;
+  border-radius: 15px;
+  position: relative;
+  height: 300px;
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.module-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--grey);
+  clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  border-radius: 15px;
+  z-index: -1;
+  display: none;
+}
+
+.module-card:not(:first-child)::before {
+  display: block;
+}
+
+.module-card:first-child::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('images/iotaCoreNoGlow.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.module-card:hover {
+  transform: translateY(-10px);
+}
+
+.module-tag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  background: var(--accent);
+  color: var(--primary);
+  position: relative;
+  z-index: 2;
+}
+
+.module-card h3 {
+  margin: 1rem 0;
+  color: var(--text);
+  text-align: center;
+}
+
+.module-card p {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.coming-soon-label {
+  position: absolute;
+  top: 1rem; 
+  right: 1rem; 
+  background: #ff3f8c;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.8rem;
+  z-index: 2;
+}
+
+.specs {
+  padding: 4rem 0;
+  background: rgba(26, 31, 77, 0.85);
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.spec-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.gallery {
+  padding: 6rem 0;
+  background: rgba(26, 31, 77, 0.85);
+}
+
+.gallery h2 {
+  color: var(--text);
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.gallery-wheel {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 2rem;
+  position: absolute;
+  left: 0;
+  animation: scroll 60s linear infinite;
+  width: fit-content;
+}
+
+.gallery-item {
+  min-width: 300px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.gallery-content {
+  padding: 1.5rem;
+}
+
+.gallery-content h3 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+@keyframes scroll {
+  0% {
     transform: translateX(0);
   }
-
-  @media (max-width: 768px) {
-    .email-signup {
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    input[type="email"] {
-      width: 100%;
-    }
-    
-    button {
-      width: 100%;
-    }
-
-    .status-message {
-      top: auto;
-      bottom: 20px;
-      right: 20px;
-      left: 20px;
-      text-align: center;
-    }
+  100% {
+    transform: translateX(-50%);
   }
-  </style>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.cdnfonts.com/css/Geomatik" rel="stylesheet">
-  </head>
-  <body>
-    <!-- Add status message div -->
-    <div class="status-message"></div>
+}
 
-    <nav>
-      <div class="logo">MR.INDUSTRIES</div>
-      <div class="nav-links">
-        <a href="https://mr.industries/">iota</a>
-        <a href="https://mr.industries/">about</a>
-        <a href="https://mr.industries/">store</a>
-        <a href="https://github.com/Mister-Industries/iotaCore" class="github-link">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container nav-content">
+    <div class="logo">MR.INDUSTRIES</div>
+    <div class="nav-links">
+      <a href="https://github.com/Mister-Industries/iotaCore">GitHub</a>
+      <a href="https://discord.gg/hvJZhwfQsF">Discord</a>
+      <a href="https://mr.industries">Documentation</a>
+      <a href="https://emphasized-crop-755.notion.site/">
+        <img src="images/notion.png" alt="Notion" class="social-icon" style="width: 24px; height: 24px; object-fit: contain;">
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Level Up Your Engineering Game</h1>
+        <p>iotaCore is the ultimate ESP32 for advanced wearables - an open-source IoT development platform designed for students and professionals working in Biotech, BCI, Robotics, AI, and many other fields!</p><p> More than just a development board - it's your gateway to learning embedded hardware development and building the future of wearable technology.</p>
+        <div class="cta-buttons">
+          <a href="https://www.pcbway.com/project/shareproject/iota_The_Open_Source_Advanced_IoT_Learning_Platform_12776757.html" class="button button-primary">Order Now</a>
+          <a href="https://github.com/Mister-Industries/iotaCore" class="button button-secondary">View on GitHub</a>
+        </div>
+      </div>
+      <div class="device-visual">
+        <div class="board-container">
+          <img src="images/iotaCore.png" alt="iotaCore Device" class="board-image">
+          <img src="images/iotaCoreBack.png" alt="iotaCore Back" class="board-back">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="modules">
+    <div class="container">
+      <h2 class="section-title">Meet the iotaFamily</h2>
+      <div class="modules-grid">
+        <a href="https://mr.industries/products/iotacore" class="module-card">
+          <i class="material-icons module-icon">memory</i>
+          <h3>iotaCore</h3>
+          <p>ESP32 microcontroller with SD Card, USB-C, LiPo battery management, and 6DOF IMU for motion tracking.</p>
+          <span class="module-tag">Core Module</span>
         </a>
-        <a href="https://discord.gg/AccV9wfX" class="github-link">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
-            <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"/>
-          </svg>
+
+        <a href="https://mr.industries/products/iotaheg" class="module-card coming-soon">
+          <i class="material-icons module-icon">psychology</i>
+          <span class="coming-soon-label">Coming Soon</span>
+          <h3>iotaHEG</h3>
+          <p>Advanced BCI capabilities for next-generation human-computer interaction projects.</p>
+          <span class="module-tag">Expansion HAT</span>
+        </a>
+
+        <a href="https://mr.industries/products/iotavoice" class="module-card coming-soon">
+          <i class="material-icons module-icon">record_voice_over</i> 
+          <span class="coming-soon-label">Coming Soon</span>
+          <h3>iotaVoice</h3>
+          <p>Add voice control and natural language processing to your projects.</p>
+          <span class="module-tag">Expansion HAT</span>
+        </a>
+
+        <a href="https://mr.industries/products/iotasniff" class="module-card coming-soon">
+          <i class="material-icons module-icon">air</i>
+          <span class="coming-soon-label">Coming Soon</span>
+          <h3>iotaSniff</h3>
+          <p>Monitor air quality, gas levels, and environmental conditions.</p>
+          <span class="module-tag">Expansion HAT</span>
+        </a>
+
+        <a href="https://mr.industries/products/iotahome" class="module-card coming-soon">
+          <i class="material-icons module-icon">home</i>
+          <span class="coming-soon-label">Coming Soon</span>
+          <h3>iotaHome</h3>
+          <p>Control and monitor home automation systems with ease.</p>
+          <span class="module-tag">Expansion HAT</span>
+        </a>
+
+        <a href="https://mr.industries/products/iotadisplay" class="module-card coming-soon">
+          <i class="material-icons module-icon">display_settings</i>
+          <span class="coming-soon-label">Coming Soon</span>
+          <h3>iotaDisplay</h3>
+          <p>Add visual output and touch interaction to your wearable projects.</p>
+          <span class="module-tag">Expansion HAT</span>
         </a>
       </div>
-    </nav>
-  
-    <main>
-      
+    </div>
+  </section>
 
-      <div class="pcb-container">
-        <a href="https://github.com/Mister-Industries/iotaCore" target="_blank">
-          <img class="pcb" src="pcb.png" alt="PCB Device">
-        </a>
+  <section class="gallery">
+    <div class="container">
+      <h2>Built with iotaCore</h2>
+      <div class="gallery-wheel">
+        <div class="gallery-track">
+          <div class="gallery-item">
+            <img src="images/IMG_20241005_225656_381.jpg" alt="Haunted Telephone">
+            <div class="gallery-content">
+              <h3>Haunted Telephone</h3>
+              <p>Interactive art installation using voice recognition and AI</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/IMG_20241128_105128_348.jpg" alt="OpenHEG Brain Computer Interface">
+            <div class="gallery-content">
+              <h3>OpenHEG: Brain Computer Interface</h3>
+              <p>Open source brain-computer interface for neurofeedback research</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/20201007_174746.jpg" alt="AI Talking Fish">
+            <div class="gallery-content">
+              <h3>AI Talking Fish</h3>
+              <p>Voice-enabled animatronic companion using GPT and TTS</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/IMG_20241219_143828_128.jpg" alt="Long Distance Message Box">
+            <div class="gallery-content">
+              <h3>Long Distance Message Box</h3>
+              <p>IoT-enabled messaging device for staying connected</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/IMG_20250104_124751_386.jpg" alt="E-Bike Controller">
+            <div class="gallery-content">
+              <h3>E-Bike Controller</h3>
+              <p>Custom electric bike motor control system</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/image-1.png" alt="LED Smart Controller">
+            <div class="gallery-content">
+              <h3>LED Smart Controller</h3>
+              <p>IoT-enabled LED control system for smart lighting</p>
+            </div>
+          </div>
+          <!-- Duplicate items for infinite scroll -->
+          <div class="gallery-item">
+            <img src="images/IMG_20241005_225656_381.jpg" alt="Haunted Telephone">
+            <div class="gallery-content">
+              <h3>Haunted Telephone</h3>
+              <p>Interactive art installation using voice recognition and AI</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/IMG_20241128_105128_348.jpg" alt="OpenHEG Brain Computer Interface">
+            <div class="gallery-content">
+              <h3>OpenHEG: Brain Computer Interface</h3>
+              <p>Open source brain-computer interface for neurofeedback research</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/20201007_174746.jpg" alt="AI Talking Fish">
+            <div class="gallery-content">
+              <h3>AI Talking Fish</h3>
+              <p>Voice-enabled animatronic companion using GPT and TTS</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/IMG_20241219_143828_128.jpg" alt="Long Distance Message Box">
+            <div class="gallery-content">
+              <h3>Long Distance Message Box</h3>
+              <p>IoT-enabled messaging device for staying connected</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/IMG_20250104_124751_386.jpg" alt="E-Bike Controller">
+            <div class="gallery-content">
+              <h3>E-Bike Controller</h3>
+              <p>Custom electric bike motor control system</p>
+            </div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/image-1.png" alt="LED Smart Controller">
+            <div class="gallery-content">
+              <h3>LED Smart Controller</h3>
+              <p>IoT-enabled LED control system for smart lighting</p>
+            </div>
+          </div>
+        </div>
       </div>
+    </div>
+  </section>
 
-      <div class="coming-soon">
-        <img class="coming-soon" src="ComingSoon.png" alt="PCB Device">
+  <section class="specs">
+    <div class="container">
+      <h2>Core Specifications</h2>
+      <div class="specs-grid">
+        <div class="spec-item">
+          <h4>Processing</h4>
+          <p>ESP32-S3 Dual-Core Microcontroller</p>
+        </div>
+        <div class="spec-item">
+          <h4>Storage</h4>
+          <p>Integrated SD Card slot</p>
+        </div>
+        <div class="spec-item">
+          <h4>Power</h4>
+          <p>USB-C with LiPo charging circuit</p>
+        </div>
+        <div class="spec-item">
+          <h4>Motion Sensing</h4>
+          <p>6-Axis IMU (Accelerometer + Gyroscope)</p>
+        </div>
+        <div class="spec-item">
+          <h4>Connectivity</h4>
+          <p>WiFi 802.11 b/g/n + Bluetooth 5.0 LE</p>
+        </div>
+        <div class="spec-item">
+          <h4>Interfaces</h4>
+          <p>I2C, Serial, STEMMA/QWIIC, 6 Analog & 6 Digital I/O</p>
+        </div>
       </div>
-      
-      <div class="email-signup">
-        <input type="email" placeholder="Enter your email">
-        <button>Sign Up</button>
+    </div>
+  </section>
+</main>
+
+<footer style="background: var(--secondary); padding: 4rem 0; margin-top: 4rem;">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+      <div>
+        <h3 style="color: var(--accent); margin-bottom: 1rem;">MR.INDUSTRIES</h3>
+        <p style="opacity: 0.8;">Building the future through open-source innovation and education.</p>
       </div>
-    </main>
+      <div>
+        <h4 style="color: var(--accent); margin-bottom: 1rem;">Quick Links</h4>
+        <ul style="list-style: none;">
+          <li style="margin-bottom: 0.5rem;"><a href="https://github.com/Mister-Industries/iotaCore" style="color: var(--text); text-decoration: none;">GitHub Repository</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="https://mr.industries" style="color: var(--text); text-decoration: none;">Documentation</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color: var(--accent); margin-bottom: 1rem;">Contact</h4>
+        <ul style="list-style: none;">
+          <li style="margin-bottom: 0.5rem;"><a href="https://discord.gg/hvJZhwfQsF" style="color: var(--text); text-decoration: none;">Join our Discord</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="https://mr.industries" style="color: var(--text); text-decoration: none;">Subscribe to Updates</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top: 3rem; text-align: center; opacity: 0.6; border-top: 1px solid var(--grey); padding-top: 2rem;">
+      2024 McIntyre-Reeves Industries. All rights reserved.
+    </div>
+  </div>
+</footer>
 
-  <script>
-    document.querySelector('button').addEventListener('click', async () => {
-        const emailInput = document.querySelector('input[type="email"]');
-        const email = emailInput.value;
-        
-        if (!email) {
-          showStatusMessage('Please enter an email address', 'error');
-          return;
-        }
-    
-        if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-          showStatusMessage('Please enter a valid email address', 'error');
-          return;
-        }
-    
-        try {
-          const scriptURL = 'https://script.google.com/macros/s/AKfycbxKrh9knBzHFTiVCIcAPoA8-uGb8dDVURQQ0R0NcLEyeMxMKYlQEa2YmTqo3roiKo8QxQ/exec';
-          const submitButton = document.querySelector('button');
-          
-          // Disable button and show loading state
-          submitButton.disabled = true;
-          submitButton.textContent = 'Submitting...';
-          
-          const response = await fetch(scriptURL, {
-            method: 'POST',
-            mode: 'no-cors',
-            headers: {
-              'Content-Type': 'text/plain;charset=utf-8',
-            },
-            body: JSON.stringify({ email: email })
-          });
-          
-          // Clear the input field
-          emailInput.value = '';
-          
-          // Reset button state
-          submitButton.disabled = false;
-          submitButton.textContent = 'SIGN UP';
-          
-          // Show success message
-          showStatusMessage('Thanks for signing up! We\'ll be in touch soon.', 'success');
-          
-        } catch (error) {
-          console.error('Error:', error);
-          showStatusMessage('Something went wrong. Please try again later.', 'error');
-          
-          // Reset button on error
-          submitButton.disabled = false;
-          submitButton.textContent = 'Sign Up';
-        }
-    });
-    
-    // Status message function
-    function showStatusMessage(message, type) {
-        const statusElement = document.querySelector('.status-message');
-        statusElement.textContent = message;
-        statusElement.className = `status-message ${type}`;
-        
-        // Force reflow
-        statusElement.offsetHeight;
-        
-        // Show the message
-        statusElement.classList.add('show');
-        
-        // Hide after 3 seconds
-        setTimeout(() => {
-            statusElement.classList.remove('show');
-        }, 3000);
-    }
-    </script>
+<script>const board = document.querySelector('.board-container');
+board.removeEventListener('mousemove', () => {});
+board.removeEventListener('mouseleave', () => {});
+document.addEventListener('scroll', () => {
+  const nav = document.querySelector('.nav');
+  if (window.scrollY > 50) {
+    nav.style.background = 'rgba(10, 15, 45, 0.95)';
+  } else {
+    nav.style.background = 'rgba(10, 15, 45, 0.9)';
+  }
+});</script>
 
-  </body></html>
+</body></html>
