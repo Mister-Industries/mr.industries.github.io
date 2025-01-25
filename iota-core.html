@@ -450,11 +450,17 @@
                 if (response.ok) {
                     const amount = selectedType === 'full' ? '35.99' : '19.99';
                     const noteText = selectedType === 'full' ? 
-                        `iotaCore Full Payment - ${formData.email}` : 
-                        `iotaCore Down Payment - ${formData.email}`;
+                        'iotaCore Full Payment' : 
+                        'iotaCore Down Payment';
                     
-                    const note = encodeURIComponent(noteText);
-                    window.location.href = `venmo://paycharge?txn=pay&recipients=Geoffrey-McIntyre&amount=${amount}&note=${note}`;
+                    const venmoUrl = new URL('venmo://paycharge');
+                    venmoUrl.searchParams.set('txn', 'pay');
+                    venmoUrl.searchParams.set('recipients', 'Geoffrey-McIntyre');
+                    venmoUrl.searchParams.set('amount', amount);
+                    venmoUrl.searchParams.set('note', noteText);
+                
+                    console.log('Redirecting to:', venmoUrl.toString());
+                    window.location.href = venmoUrl.toString();
                 } else {
                     throw new Error('Form submission failed');
                 }
