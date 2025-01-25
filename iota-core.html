@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iotaCore - Advanced ESP32 Development Board | MR.INDUSTRIES</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a0f2d;
+            --secondary: #1a1f4d;
+            --accent: #00f0ff;
+            --accent2: #ff3f8c;
+            --text: #ffffff;
+            --grey: rgba(255,255,255,0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--primary);
+            background-image: url('images/synthwavegrid.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--text);
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1.6;
+        }
+
+        .nav {
+            position: fixed;
+            width: 100%;
+            padding: 1.5rem 0;
+            background: rgba(10, 15, 45, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .product-section {
+            padding-top: 120px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .gallery-container {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 1;
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .gallery-nav {
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .gallery-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--grey);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .gallery-dot.active {
+            background: var(--accent);
+        }
+
+        .gallery-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: var(--text);
+            padding: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 50%;
+        }
+
+        .gallery-prev {
+            left: 1rem;
+        }
+
+        .gallery-next {
+            right: 1rem;
+        }
+
+        .product-info {
+            padding: 2rem;
+            background: rgba(26,31,77,0.85);
+            border-radius: 15px;
+        }
+
+        .product-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-price {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .product-description {
+            margin-bottom: 2rem;
+        }
+
+        .purchase-options {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .button {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            flex: 1;
+        }
+
+        .button-venmo {
+            background: #008CFF;
+            color: var(--text);
+        }
+
+        .button-paypal {
+            background: #FFB800;
+            color: var(--primary);
+        }
+
+        .notice {
+            background: rgba(255,63,140,0.1);
+            border-left: 4px solid var(--accent2);
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .fine-print {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--grey);
+        }
+
+        footer {
+            background: var(--secondary);
+            padding: 4rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .payment-choice:hover {
+            border-color: var(--accent);
+        }
+        
+        .payment-choice input:checked + div {
+            color: var(--accent);
+        }
+        .hidden {
+            display: none !important;
+        }
+
+        input[type="text"], input[type="email"] {
+            background: rgba(255,255,255,0.1);
+            border: 1px solid var(--grey);
+            color: var(--text);
+            padding: 0.75rem;
+            border-radius: 8px;
+            width: 100%;
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus {
+            border-color: var(--accent);
+            outline: none;
+        }
+
+        .submit-button {
+            background: var(--accent);
+            color: var(--primary);
+            font-weight: 600;
+            padding: 1rem;
+            border-radius: 8px;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-button:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="https://mr.industries" style="text-decoration: none;">
+                <div class="logo">MR.INDUSTRIES</div>
+            </a>
+            <div class="nav-links">
+                <a href="https://github.com/Mister-Industries/iotaCore">GitHub</a>
+                <a href="https://discord.gg/hvJZhwfQsF">Discord</a>
+                <a href="https://mr.industries">Documentation</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="product-section">
+        <div class="container">
+            <div class="product-grid">
+                <div>
+                    <div class="gallery-container">
+                        <img src="images/iotaCore-store-1.png" alt="iotaCore Device" class="gallery-image active">
+                        <img src="images/iotaCore-store-2.png" alt="iotaCore Back" class="gallery-image">
+                        <img src="images/iotaCore-store-3.png" alt="iotaCore Details" class="gallery-image">
+                        <button class="gallery-arrow gallery-prev">←</button>
+                        <button class="gallery-arrow gallery-next">→</button>
+                        <div class="gallery-nav">
+                            <div class="gallery-dot active"></div>
+                            <div class="gallery-dot"></div>
+                            <div class="gallery-dot"></div>
+                        </div>
+                    </div>
+                    <div style="margin: 1.5rem 0; padding: 1rem; background: rgba(26,31,77,0.85); border-radius: 10px;">
+                        <h4 style="color: var(--accent); margin-bottom: 0.5rem;">Package Includes:</h4>
+                        <ul style="list-style: none; margin-left: 1rem;">
+                            <li>• 1x iotaCore Development Board</li>
+                            <li>• 1x USB-C Programming Cable</li>
+                            <li>• 1x 3D-Printed Enclosure</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h1 class="product-title">iotaCore ESP32 Development Board</h1>
+                    <div class="product-price">From $19.99*</div>
+                    <div class="notice">
+                        <strong>Local Pickup Only</strong> - No Shipping Available
+                    </div>
+                    <p class="product-description">
+                        The ultimate ESP32 development board for advanced wearables and IoT projects. Features USB-C, LiPo battery management, SD card slot, and 6DOF IMU for motion tracking.
+                    </p>
+                    <div class="notice" style="background: rgba(0,240,255,0.1); border-color: var(--accent);">
+                        <strong>Batch Order Notice:</strong> Orders are fulfilled within 30 days once minimum batch quantity is reached. Full refund available if batch minimum is not met.
+                    </div>
+            
+                    <div class="payment-option">
+                        <h3 style="color: var(--accent); margin-bottom: 1rem;">Select Payment Option:</h3>
+                        <div style="display: flex; flex-direction: column; gap: 1rem; background: rgba(26,31,77,0.95); padding: 1.5rem; border-radius: 15px;">
+                            <label class="payment-choice" style="display: flex; align-items: center; padding: 1rem; border: 1px solid var(--grey); border-radius: 10px; cursor: pointer;">
+                                <input type="radio" name="paymentType" value="full" checked 
+                                       style="width: 20px; height: 20px; margin-right: 1rem; accent-color: var(--accent);">
+                                <div style="flex-grow: 1">
+                                    <div style="font-weight: 600; font-size: 1.1rem;">Single Payment</div>
+                                    <div style="font-size: 1.4rem; color: var(--accent);">$35.99</div>
+                                    <div style="color: var(--accent2); font-size: 0.9rem;">Save 10% vs. split payment</div>
+                                </div>
+                            </label>
+                            
+                            <label class="payment-choice" style="display: flex; align-items: center; padding: 1rem; border: 1px solid var(--grey); border-radius: 10px; cursor: pointer;">
+                                <input type="radio" name="paymentType" value="split"
+                                       style="width: 20px; height: 20px; margin-right: 1rem; accent-color: var(--accent);">
+                                <div style="flex-grow: 1">
+                                    <div style="font-weight: 600; font-size: 1.1rem;">Split Payment</div>
+                                    <div style="font-size: 1.4rem;">$19.99 × 2</div>
+                                    <div style="color: rgba(255,255,255,0.6); font-size: 0.9rem;">$19.99 now, then $19.99 prior to shipment</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+            
+                    <form id="orderForm" style="margin-top: 2rem; background: rgba(26,31,77,0.95); padding: 1.5rem; border-radius: 15px;">
+                        <div style="display: grid; gap: 1rem;">
+                            <div>
+                                <label style="display: block; margin-bottom: 0.5rem;">Full Name</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div>
+                                <label style="display: block; margin-bottom: 0.5rem;">Email</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div>
+                                <label style="display: block; margin-bottom: 0.5rem;">Discord Username (optional)</label>
+                                <input type="text" id="discord">
+                            </div>
+                        </div>
+                        <button type="submit" id="submitBtn" class="submit-button" style="margin-top: 1.5rem;">
+                            Pay $35.99 with Venmo
+                        </button>
+                    </form>
+            
+                    <div class="fine-print">
+                        * Split payment option: $19.99 down payment + $19.99 prior to shipment. Single payment saves 10%.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 style="color: var(--accent); margin-bottom: 1rem;">MR.INDUSTRIES</h3>
+                    <p style="opacity: 0.8;">Building the future through open-source innovation and education.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--accent); margin-bottom: 1rem;">Quick Links</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.5rem;"><a href="/terms-and-conditions" style="color: var(--text); text-decoration: none;">Terms and Conditions</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="https://github.com/Mister-Industries/iotaCore" style="color: var(--text); text-decoration: none;">GitHub Repository</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: var(--accent); margin-bottom: 1rem;">Contact</h4>
+                    <ul style="list-style: none;">
+                        <li style="margin-bottom: 0.5rem;"><a href="https://discord.gg/hvJZhwfQsF" style="color: var(--text); text-decoration: none;">Join our Discord</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="margin-top: 3rem; text-align: center; opacity: 0.6; border-top: 1px solid var(--grey); padding-top: 2rem;">
+                2024 McIntyre-Reeves Industries. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const images = document.querySelectorAll('.gallery-image');
+        const dots = document.querySelectorAll('.gallery-dot');
+        const prevBtn = document.querySelector('.gallery-prev');
+        const nextBtn = document.querySelector('.gallery-next');
+        let currentIndex = 0;
+
+        function showImage(index) {
+            images.forEach(img => img.style.display = 'none');
+            dots.forEach(dot => dot.classList.remove('active'));
+            images[index].style.display = 'block';
+            dots[index].classList.add('active');
+        }
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            showImage(currentIndex);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+        });
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                showImage(currentIndex);
+            });
+        });
+
+        showImage(0);
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let selectedType = 'full';
+            
+            document.querySelectorAll('input[name="paymentType"]').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    selectedType = this.value;
+                    document.getElementById('submitBtn').textContent = selectedType === 'full' ? 
+                        'Pay $35.99 with Venmo' : 
+                        'Pay $19.99 Down Payment with Venmo';
+                });
+            });
+
+            document.getElementById('orderForm').addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const submitBtn = document.getElementById('submitBtn');
+                const originalText = submitBtn.textContent;
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Processing...';
+
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    discord: document.getElementById('discord').value,
+                    paymentType: selectedType,
+                    amount: selectedType === 'full' ? '35.99' : '19.99',
+                    timestamp: new Date().toISOString()
+                };
+
+                try {
+                    const response = await fetch('https://formspree.io/f/movjvwpw', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    if (response.ok) {
+                        const amount = selectedType === 'full' ? '35.99' : '19.99';
+                        const note = `iotaCore ${selectedType === 'full' ? 'Full Payment' : 'Pre-order Down Payment'} - ${formData.email}`;
+                        
+                        console.log('Form submitted, redirecting to Venmo...');
+                        
+                        setTimeout(() => {
+                            window.location.href = `venmo://paycharge?txn=pay&recipients=Geoffrey-McIntyre&amount=${amount}&note=${encodeURIComponent(note)}`;
+                        }, 500);
+                    } else {
+                        throw new Error('Form submission failed');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('There was an error processing your request. Please try again.');
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                }
+            });
+
+            // Image gallery code
+            const images = document.querySelectorAll('.gallery-image');
+            const dots = document.querySelectorAll('.gallery-dot');
+            const prevBtn = document.querySelector('.gallery-prev');
+            const nextBtn = document.querySelector('.gallery-next');
+            let currentIndex = 0;
+
+            function showImage(index) {
+                images.forEach(img => img.style.display = 'none');
+                dots.forEach(dot => dot.classList.remove('active'));
+                images[index].style.display = 'block';
+                dots[index].classList.add('active');
+            }
+
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                showImage(currentIndex);
+            });
+
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            });
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    showImage(currentIndex);
+                });
+            });
+
+            showImage(0);
+        });
+    </script>
+</body>
+</html>

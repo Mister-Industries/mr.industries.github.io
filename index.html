@@ -138,15 +138,8 @@ body {
   position: relative;
   width: 400px;
   height: 400px;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
   animation: float 3s ease-in-out infinite;
   margin-left: 8rem;
-}
-
-.board-container:hover {
-  transform: rotateY(180deg);
-  animation: none;
 }
 
 .board-image, .board-back {
@@ -348,6 +341,18 @@ body {
   margin-bottom: 0.5rem;
 }
 
+li {
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+li::before {
+  content: "•";
+  color: var(--accent);
+  position: absolute;
+  left: -1rem;
+}
+
 @keyframes scroll {
   0% {
     transform: translateX(0);
@@ -376,7 +381,7 @@ body {
 
 <nav class="nav">
   <div class="container nav-content">
-    <div class="logo">MR.INDUSTRIES</div>
+    <a href="https://mr.industries" style="text-decoration: none;"><div class="logo">MR.INDUSTRIES</div></a>
     <div class="nav-links">
       <a href="https://github.com/Mister-Industries/iotaCore">GitHub</a>
       <a href="https://discord.gg/hvJZhwfQsF">Discord</a>
@@ -395,7 +400,7 @@ body {
         <h1>Level Up Your Engineering Game</h1>
         <p>iotaCore is the ultimate ESP32 for advanced wearables - an open-source IoT development platform designed for students and professionals working in Biotech, BCI, Robotics, AI, and many other fields!</p><p> More than just a development board - it's your gateway to learning embedded hardware development and building the future of wearable technology.</p>
         <div class="cta-buttons">
-          <a href="https://www.pcbway.com/project/shareproject/iota_The_Open_Source_Advanced_IoT_Learning_Platform_12776757.html" class="button button-primary">Order Now</a>
+          <a href="/iota-core" class="button button-primary">Order Now</a>
           <a href="https://github.com/Mister-Industries/iotaCore" class="button button-secondary">View on GitHub</a>
         </div>
       </div>
@@ -419,43 +424,38 @@ body {
           <span class="module-tag">Core Module</span>
         </a>
 
-        <a href="https://mr.industries/products/iotaheg" class="module-card coming-soon">
-          <i class="material-icons module-icon">psychology</i>
-          <span class="coming-soon-label">Coming Soon</span>
-          <h3>iotaHEG</h3>
-          <p>Advanced BCI capabilities for next-generation human-computer interaction projects.</p>
+        <a href="https://mr.industries/products/iotadisplay" class="module-card">
+          <i class="material-icons module-icon">display_settings</i>
+          <h3>iotaDisplay</h3>
+          <p>Add visual output and touch interaction to your wearable projects.</p>
           <span class="module-tag">Expansion HAT</span>
         </a>
 
-        <a href="https://mr.industries/products/iotavoice" class="module-card coming-soon">
-          <i class="material-icons module-icon">record_voice_over</i> 
-          <span class="coming-soon-label">Coming Soon</span>
+        <a href="https://mr.industries/products/iotaglow" class="module-card">
+          <i class="material-icons module-icon">lightbulb</i>
+          <h3>iotaGlow</h3>
+          <p>Programmable LED lighting and visual feedback system for interactive projects.</p>
+          <span class="module-tag">Expansion HAT</span>
+        </a>
+
+        <a href="https://mr.industries/products/iotavoice" class="module-card">
+          <i class="material-icons module-icon">record_voice_over</i>
           <h3>iotaVoice</h3>
           <p>Add voice control and natural language processing to your projects.</p>
           <span class="module-tag">Expansion HAT</span>
         </a>
 
-        <a href="https://mr.industries/products/iotasniff" class="module-card coming-soon">
+        <a href="https://mr.industries/products/iotasniff" class="module-card">
           <i class="material-icons module-icon">air</i>
-          <span class="coming-soon-label">Coming Soon</span>
           <h3>iotaSniff</h3>
           <p>Monitor air quality, gas levels, and environmental conditions.</p>
           <span class="module-tag">Expansion HAT</span>
         </a>
 
-        <a href="https://mr.industries/products/iotahome" class="module-card coming-soon">
-          <i class="material-icons module-icon">home</i>
-          <span class="coming-soon-label">Coming Soon</span>
-          <h3>iotaHome</h3>
-          <p>Control and monitor home automation systems with ease.</p>
-          <span class="module-tag">Expansion HAT</span>
-        </a>
-
-        <a href="https://mr.industries/products/iotadisplay" class="module-card coming-soon">
-          <i class="material-icons module-icon">display_settings</i>
-          <span class="coming-soon-label">Coming Soon</span>
-          <h3>iotaDisplay</h3>
-          <p>Add visual output and touch interaction to your wearable projects.</p>
+        <a href="https://mr.industries/products/iotaheg" class="module-card">
+          <i class="material-icons module-icon">psychology</i>
+          <h3>iotaHEG</h3>
+          <p>Advanced BCI capabilities for next-generation human-computer interaction projects.</p>
           <span class="module-tag">Expansion HAT</span>
         </a>
       </div>
@@ -600,6 +600,7 @@ body {
       <div>
         <h4 style="color: var(--accent); margin-bottom: 1rem;">Quick Links</h4>
         <ul style="list-style: none;">
+          <li style="margin-bottom: 0.5rem;"><a href="https://mr.industries/terms-and-conditions" style="color: var(--text); text-decoration: none;">Terms and Conditions</a></li>
           <li style="margin-bottom: 0.5rem;"><a href="https://github.com/Mister-Industries/iotaCore" style="color: var(--text); text-decoration: none;">GitHub Repository</a></li>
           <li style="margin-bottom: 0.5rem;"><a href="https://mr.industries" style="color: var(--text); text-decoration: none;">Documentation</a></li>
         </ul>
