@@ -349,7 +349,7 @@ body {
   display: block;
 }
 
-.module-card:nth-child(3)::before {
+.module-card:nth-child(4)::before {
   display: block;
 }
 
@@ -374,14 +374,14 @@ body {
 .module-card:nth-child(2)::after {
   background-image: url('../images/tinyDisplay.png');
 }
-/*
+
 .module-card:nth-child(3)::after {
   background-image: url('../images/tinyGlow.png');
 }
-*/
-.module-card:nth-child(4)::after {
+
+/*.module-card:nth-child(4)::after {
   background-image: url('../images/tinyVoice.png');
-}
+}*/
 
 .module-card:nth-child(5)::after {
   background-image: url('../images/tinySniff.png');
