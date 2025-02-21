@@ -344,10 +344,10 @@ body {
   display: none;
 }
 
-/* Only show grey octagon for the last card (tinyHEG) */
+/* Only show grey octagon for the last card (tinyHEG)
 .module-card:nth-child(6)::before {
   display: block;
-}
+}*/
 
 .module-card:nth-child(4)::before {
   display: block;
@@ -386,10 +386,10 @@ body {
 .module-card:nth-child(5)::after {
   background-image: url('../images/tinySniff.png');
 }
-/*
+
 .module-card:nth-child(6)::after {
-  background-image: url('../images/tinyHEG.png');
-}*/
+  background-image: url('../images/tinyProto.png');
+}
 
 .module-card:hover {
   transform: translateY(-10px);
