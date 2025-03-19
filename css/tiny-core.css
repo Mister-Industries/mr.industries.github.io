@@ -191,8 +191,8 @@ body {
 }
 
 .notice.info {
-    background: rgba(0,240,255,0.1);
-    border-color: var(--accent);
+    background: rgba(255,63,140,0.1);
+    border-color: var(--accent2);
 }
 
 .payment-choices {

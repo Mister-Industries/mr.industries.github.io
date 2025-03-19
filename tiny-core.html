@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tinyCore - Advanced ESP32 Development Board | MR.INDUSTRIES</title>
+    <title>tinyCore - Advanced ESP32 Development Kit | MR.INDUSTRIES</title>
     <link href="css/tiny-core.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -49,28 +49,26 @@
                         </div>
                     </div>
                     <div class="package-list">
-                        <h4 class="package-title">Package Includes:</h4>
+                        <h4 class="package-title">Full Starter Kit Includes:</h4>
                         <ul class="package-items">
                             <li>• 1x tinyCore Development Board</li>
                             <li>• 1x USB-C Programming Cable</li>
                             <li>• 1x 3D-Printed Enclosure</li>
-                            <li>• 2x Female Headers</li>
-                            <li>• 1x Male Header</li>
                             <li>• 2x M3 Screws (for Enclosure)</li>
+                            <li>• 1x 4GB Micro SD Card</li>
+                            <li>• 1x Micro SD Card Reader</li>
+                            <li>• 1x Crisp High Five (NOTE: Only redeemable in-person)</li>
                         </ul>
                     </div>
                 </div>
                 <div class="product-info">
-                    <h1 class="product-title">tinyCore ESP32 Development Board</h1>
+                    <h1 class="product-title">tinyCore ESP32-S3 Development Kit</h1>
                     <div class="product-price">From $35.99*</div>
-                    <div class="notice">
-                        <strong>Local Pickup Only (Boulder, CO)</strong> - No Shipping Available
-                    </div>
                     <p class="product-description">
-                        The ultimate ESP32 development board for advanced wearables and IoT projects. Features USB-C, LiPo battery management, SD card slot, and 6DOF IMU for motion tracking.
+                        The ultimate ESP32 development board for getting started with advanced wearables and IoT projects. Features USB-C, LiPo battery management, SD card, and 6DOF IMU for motion tracking.
                     </p>
                     <div class="notice info">
-                        <strong>Batch Order Notice:</strong> Orders are fulfilled within 30 days once minimum batch quantity is reached. Full refund available if batch minimum is not met.
+                        <strong>Batch Order Notice:</strong> Orders are fulfilled within 30 days <strong><i>after</i></strong> minimum batch quantity (20) is reached. Full refund available if batch minimum is not met.
                     </div>
             
                     <div class="payment-option">
@@ -79,29 +77,29 @@
                             <label class="payment-choice">
                                 <input type="radio" name="paymentType" value="full" checked>
                                 <div class="payment-content">
-                                    <div class="payment-title">Single Payment</div>
-                                    <div class="payment-amount">$35.99</div>
-                                    <div class="payment-savings">Save 10% vs. split payment</div>
+                                    <div class="payment-title">Full Starter Kit</div>
+                                    <div class="payment-amount">$45.99</div>
+                                    <div class="payment-savings">Everything you need to get started, and we mean <b><i>everything</i></b>.</div>
                                 </div>
                             </label>
                             
                             <label class="payment-choice">
                                 <input type="radio" name="paymentType" value="split">
                                 <div class="payment-content">
-                                    <div class="payment-title">Split Payment</div>
-                                    <div class="payment-amount">$19.99 × 2</div>
-                                    <div>$19.99 now, then $19.99 on batch completion</div>
+                                    <div class="payment-title">Board + Enclosure Only</div>
+                                    <div class="payment-amount">$35.99</div>
+                                    <div>Don't need a cable, case, micro SD card, or reader? We got you covered!</div>
                                 </div>
                             </label>
                         </div>
                         
                         <button id="payButton" class="submit-button">
-                            Pay $35.99 with Card
+                            Pay $45.99 with Card
                         </button>
                     </div>
             
                     <div class="fine-print">
-                        * Payment options: $35.99 full payment or $19.99 down payment + $19.99 final payment. See our <a href="/terms-and-conditions">Terms and Conditions</a> for complete details about purchasing and payment plans.
+                        * Payment options: $45.99 for the Full Starter Kit or $35.99 for Board + Enclosure Only. See our <a href="/terms-and-conditions" style="color: var(--accent);">Terms and Conditions</a> for complete details about purchasing options.
                     </div>
                 </div>
             </div>
@@ -177,15 +175,15 @@
             const payButton = document.getElementById('payButton');
             
             // Stripe payment links
-            const STRIPE_FULL_PAYMENT_LINK = 'https://buy.stripe.com/4gwbK05Hnd1SfmMbII';
-            const STRIPE_SPLIT_PAYMENT_LINK = 'https://buy.stripe.com/fZe4hyfhX2nefmMdQR';
+            const STRIPE_FULL_PAYMENT_LINK = 'https://buy.stripe.com/3cscO4c5Ld1ScaAcMO';
+            const STRIPE_SPLIT_PAYMENT_LINK = 'https://buy.stripe.com/3cseWc8Tz3ri7Uk3cf';
             
             document.querySelectorAll('input[name="paymentType"]').forEach(radio => {
                 radio.addEventListener('change', function() {
                     selectedType = this.value;
                     payButton.textContent = selectedType === 'full' ? 
-                        'Pay $35.99 with Card' : 
-                        'Pay $19.99 with Card';
+                        'Pay $45.99 with Card' : 
+                        'Pay $35.99 with Card';
                 });
             });
         
