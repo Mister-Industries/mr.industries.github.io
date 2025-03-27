@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started - MR.INDUSTRIES</title>
+    <meta http-equiv="refresh" content="3; url=https://mr.industries">
+    <style>
+        :root {
+            --primary: #0a0f2d;
+            --secondary: #1a1f4d;
+            --accent: #00f0ff;
+            --accent2: #ff3f8c;
+            --text: #ffffff;
+            --grey: rgba(255,255,255,0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--primary);
+            background-image: url('images/synthwavegrid.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-blend-mode: normal;
+            color: var(--text);
+            font-family: 'Space Grotesk', sans-serif;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .nav {
+            position: fixed;
+            width: 100%;
+            padding: 1.5rem 0;
+            background: rgba(10, 15, 45, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            top: 0;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--accent), var(--accent2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .redirect-content {
+            background: rgba(26, 31, 77, 0.85);
+            border-radius: 15px;
+            padding: 3rem;
+            margin-top: 120px;
+            animation: pulse 2s infinite;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        p {
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--grey);
+            border-radius: 50%;
+            border-top-color: var(--accent);
+            margin: 0 auto;
+            animation: spin 1s linear infinite;
+        }
+
+        .manual-link {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(45deg, var(--accent), var(--accent2));
+            border-radius: 30px;
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .manual-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(0, 240, 255, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 240, 255, 0); }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="container nav-content">
+            <a href="https://mr.industries" style="text-decoration: none;"><div class="logo">MR.INDUSTRIES</div></a>
+            <div class="nav-links">
+                <a href="https://github.com/Mister-Industries/tinyCore">GitHub</a>
+                <a href="https://discord.gg/hvJZhwfQsF">Discord</a>
+                <a href="https://mr.industries">Documentation</a>
+                <a href="https://emphasized-crop-755.notion.site/">
+                    <img src="images/notion.png" alt="Notion" class="social-icon">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="redirect-content">
+                <h1>Redirecting to Documentation</h1>
+                <p>You'll be automatically redirected to our documentation site in a few seconds...</p>
+                <div class="loader"></div>
+                <a href="https://emphasized-crop-755.notion.site/tinyDocs-19c67bb8fd9481dcb372d456ca8e0cd1" class="manual-link">Click here if you're not redirected</a>
+            </div>
+        </div>
+    </main>
+    
+    <script>
+        // You can add additional JavaScript here if needed
+        setTimeout(function() {
+            window.location.href = "https://emphasized-crop-755.notion.site/tinyDocs-19c67bb8fd9481dcb372d456ca8e0cd1";
+        }, 3000); // 3 second redirect
+    </script>
+</body>
+</html>
