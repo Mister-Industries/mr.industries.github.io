@@ -36,7 +36,10 @@
   <nav class="nav">
     <div class="container nav-content">
       <a href="https://mr.industries" style="text-decoration: none;">
-        <div class="logo">MR.INDUSTRIES</div>
+        <div class="logo">
+          <span style="color: white;">tiny</span><span class="core-gradient">Core</span>
+          <span class="by-mr">by MR.INDUSTRIES</span>
+        </div>
       </a>
       <div class="hamburger">
         <span></span>
@@ -47,9 +50,6 @@
         <a href="https://github.com/Mister-Industries/tinyCore">GitHub</a>
         <a href="https://discord.gg/hvJZhwfQsF">Discord</a>
         <a href="https://docs.mr.industries">tinyDocs</a>
-        <a href="https://emphasized-crop-755.notion.site/">
-          <img src="images/notion.png" alt="Notion" class="social-icon">
-        </a>
       </div>
     </div>
   </nav>
@@ -57,163 +57,410 @@
 <main>
   <section class="hero">
     <div class="hero-content">
-        <div class="hero-text">
-            <h1>From Idea to Prototype in Hours, not Days</h1>
-            <p>tinyCore is the open-source electronics platform designed by engineers who remember what it's like to spend entire weekends debugging connections. Everything you need to build amazing projects, professionally integrated.</p>
-            <p>No more loose wires, bad documentation, or headaches. We make learning industry-level electronics easy.</p>
-            <div class="cta-buttons">
-                <a href="https://www.tindie.com/products/mr_industries/tinycore-v20-esp32-s3-starter-kit/" class="button button-primary">Order Now</a>
-                <a href="https://docs.mr.industries" class="button button-secondary">Learn More</a>
+        <h1 class="hero-title">From Idea to Prototype<br><span class="underline">in Hours</span>, not Days</h1>
+        <div class="hero-columns">
+            <div class="hero-text">
+                <p>tinyCore is the open-source electronics platform designed by engineers who remember what it's like to spend entire weekends debugging connections. Everything you need to build amazing projects, professionally integrated.</p>
+                <p>No more loose wires, bad documentation, or headaches. We make learning industry-level electronics easy.</p>
+                <div class="cta-buttons">
+                    <a href="https://www.tindie.com/products/mr_industries/tinycore-v20-esp32-s3-starter-kit/" class="button button-primary">Order Now</a>
+                    <a href="https://docs.mr.industries" class="button button-secondary">Learn More</a>
+                </div>
             </div>
-        </div>
-        <div class="device-visual">
-            <div class="board-container">
-                <img src="images/tinyCore.png" alt="tinyCore Device" class="board-image">
+            <div class="device-visual">
+                <div class="board-container">
+                    <img src="images/tinyCore.png" alt="tinyCore Device" class="board-image">
+                </div>
             </div>
         </div>
     </div>
 </section>
+
+  <section class="video-section">
+    <div class="container">
+      <h2 class="section-title">What is tinyCore?</h2>
+      <div class="video-wrapper">
+        <iframe src="https://www.youtube.com/embed/wqKJGHjnWzM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery">
+    <div class="gallery-container">
+      <h2>User Project Showcase</h2>
+      <div class="gallery-wheel">
+        <div class="gallery-track">
+          <!-- Ski Helmet -->
+          <div class="gallery-item">
+            <div class="user-profile">
+              <div class="profile-icon">🎨</div>
+              <div class="user-info">
+                <div class="user-name">Elizabeth</div>
+                <div class="user-title">CTD Student</div>
+              </div>
+            </div>
+            <h3>The Clueless Closet RFID Reader</h3>
+            <div class="project-photo-placeholder">
+              <a href="#">
+                <img src="images/Clueless.jpg" alt="PulseOx Smart Ski Helmet">
+              </a>
+            </div>
+            <div class="time-comparison">
+              <div class="time-box without-tinycore">
+                <h4>WITHOUT TINYCORE</h4>
+                <p><strong>48hrs</strong></p>
+                <p class="small-text">Setup struggle –<br>gave up</p>
+              </div>
+              <div class="time-box with-tinycore">
+                <h4>WITH TINYCORE</h4>
+                <p><strong>30min</strong></p>
+                <p class="small-text">Hardware working</p>
+              </div>
+            </div>
+            <span class="project-type-tag core-expansion">Core + RFID Sensor</span>
+            <p class="testimonial">"After using an ESP32 extensively for a week with no success in getting my sensor to connect, it was so relieving to use tinyCore after 30 minutes and have a working prototype for my project!"</p>
+          </div>
+          <!-- Punch-It -->
+          <div class="gallery-item">
+            <div class="user-profile">
+              <div class="profile-icon">💻</div>
+              <div class="user-info">
+                <div class="user-name">Logan</div>
+                <div class="user-title">CS Student</div>
+              </div>
+            </div>
+            <h3>"Punch-It" Boxing Glove</h3>
+            <div class="project-photo-placeholder">
+              <a href="#">
+                <img src="images/IMG_3351.JPG" alt="Punch-it boxing gloves toy">
+              </a>
+            </div>
+            <div class="time-comparison">
+              <div class="time-box estimated-time">
+                <h4>ESTIMATED TIME</h4>
+                <p><strong>2 weeks</strong></p>
+                <p class="small-text">Traditional approach</p>
+              </div>
+              <div class="time-box actual-time">
+                <h4>ACTUAL TIME</h4>
+                <p><strong>5 hours</strong></p>
+                <p class="small-text">Total project time</p>
+              </div>
+            </div>
+            <span class="project-type-tag core-expansion">Core + tinyVoice</span>
+          </div>
+          <!-- Long Distance Message Box -->
+          <div class="gallery-item">
+            <div class="user-profile">
+              <div class="profile-icon">🤖</div>
+              <div class="user-info">
+                <div class="user-name">Geoff McIntyre</div>
+                <div class="user-title">Mr. Industries Staff</div>
+              </div>
+            </div>
+            <h3>Long Distance Message Box</h3>
+            <div class="project-photo-placeholder">
+              <a href="#">
+                <img src="images/FHT4251M7RN5QG2.jpg" alt="Long Distance Message Box">
+              </a>
+            </div>
+            <div class="time-comparison">
+              <div class="time-box hardware-setup">
+                <h4>HARDWARE SETUP</h4>
+                <p><strong>1 hour</strong></p>
+                <p class="small-text">vs weeks<br>traditionally</p>
+              </div>
+              <div class="time-box total-project">
+                <h4>TOTAL PROJECT</h4>
+                <p><strong>6 hours</strong></p>
+                <p class="small-text">including web app<br>&amp; database</p>
+              </div>
+            </div>
+            <span class="project-type-tag core-expansion">Core + Display</span>
+            <p class="testimonial">"This was my first project using tinyCore, I was able to complete the entire project in 8 hours, just in time for my girlfriend to catch her flight for the holidays."</p>
+          </div>
+          <!-- Haunted Telephone -->
+          <div class="gallery-item">
+            <div class="user-profile">
+              <div class="profile-icon">👻</div>
+              <div class="user-info">
+                <div class="user-name">Geoff McIntyre</div>
+                <div class="user-title">Mr. Industries Staff</div>
+              </div>
+            </div>
+            <h3>Haunted Telephone</h3>
+            <div class="project-photo-placeholder">
+              <a href="#">
+                <img src="images/IMG_20241005_225656_381.jpg" alt="Haunted Telephone">
+              </a>
+            </div>
+            <div class="time-comparison">
+              <div class="time-box estimated-time">
+                <h4>ESTIMATED TIME</h4>
+                <p><strong>1 month</strong></p>
+                <p class="small-text">Complex wiring</p>
+              </div>
+              <div class="time-box actual-time">
+                <h4>ACTUAL TIME</h4>
+                <p><strong>2 weeks</strong></p>
+                <p class="small-text">Simplified</p>
+              </div>
+            </div>
+            <span class="project-type-tag core-expansion">Core + tinyVoice</span>
+          </div>
+          <!-- LED Graduation Cap -->
+          <div class="gallery-item">
+            <div class="user-profile">
+              <div class="profile-icon">🎓</div>
+              <div class="user-info">
+                <div class="user-name">Keaton G.</div>
+                <div class="user-title">Student Developer</div>
+              </div>
+            </div>
+            <h3>LED Graduation Cap</h3>
+            <div class="project-photo-placeholder">
+              <a href="#">
+                <img src="images/IMG_3338.JPG" alt="LED Graduation Cap">
+              </a>
+            </div>
+            <div class="time-comparison">
+              <div class="time-box estimated-time">
+                <h4>SETUP TIME</h4>
+                <p><strong>Hours</strong></p>
+                <p class="small-text">Traditional wiring</p>
+              </div>
+              <div class="time-box actual-time">
+                <h4>TINYCORE</h4>
+                <p><strong>Minutes</strong></p>
+                <p class="small-text">Plug & Play</p>
+              </div>
+            </div>
+            <span class="project-type-tag core-only">Core + tinyGlow</span>
+            <p class="testimonial">"tinyGlow made adding dynamic LED effects to my graduation cap incredibly simple. It was up and running in minutes!"</p>
+          </div>
+          <!-- OpenHEG -->
+          <div class="gallery-item">
+            <div class="user-profile">
+              <div class="profile-icon">🧠</div>
+              <div class="user-info">
+                <div class="user-name">OpenHEG</div>
+                <div class="user-title">Senior Design Project</div>
+              </div>
+            </div>
+            <h3>NIR-HEG Brain Scanner</h3>
+            <div class="project-photo-placeholder">
+              <a href="https://www.instructables.com/Inspiring-Kids-to-Learn-About-Neuroscience-How-I-M/">
+                <img src="images/OpenHEG.gif" alt="OpenHEG Brain Computer Interface">
+              </a>
+            </div>
+            <div class="time-comparison">
+              <div class="time-box without-tinycore">
+                <h4>OLD WAY</h4>
+                <p><strong>Complex</strong></p>
+                <p class="small-text">Multiple boards</p>
+              </div>
+              <div class="time-box with-tinycore">
+                <h4>TINYCORE</h4>
+                <p><strong>Integrated</strong></p>
+                <p class="small-text">All-in-one</p>
+              </div>
+            </div>
+            <span class="project-type-tag core-sensor-expansion">Core + Custom Sensor</span>
+            <p class="testimonial">"Developing BCIs requires precise sensor integration. tinyCore's IMU and compact size made our prototype much cleaner and faster to build."</p>
+          </div>
+          <!-- AI Talking Fish -->
+          <div class="gallery-item">
+            <div class="user-profile">
+              <div class="profile-icon">🐠</div>
+              <div class="user-info">
+                <div class="user-name">Geoff McIntyre</div>
+                <div class="user-title">Mr. Industries</div>
+              </div>
+            </div>
+            <h3>AI Talking Fish</h3>
+            <div class="project-photo-placeholder">
+              <a href="#">
+                <img src="images/20201007_174746.jpg" alt="AI Talking Fish">
+              </a>
+            </div>
+            <div class="time-comparison">
+              <div class="time-box estimated-time">
+                <h4>PROJECT SCOPE</h4>
+                <p><strong>Fun</strong></p>
+                <p class="small-text">Weekend project</p>
+              </div>
+              <div class="time-box actual-time">
+                <h4>REALITY</h4>
+                <p><strong>Voice Enabled</strong></p>
+                <p class="small-text">GPT & TTS</p>
+              </div>
+            </div>
+            <span class="project-type-tag core-expansion">Core + tinyVoice</span>
+            <p class="testimonial">"I wanted a talking fish for my desk. tinyCore made it surprisingly easy to integrate voice recognition and text-to-speech for a truly interactive pet!"</p>
+          </div>
+          <!-- E-Bike Controller -->
+          <div class="gallery-item">
+            <div class="user-profile">
+              <div class="profile-icon">🚲</div>
+              <div class="user-info">
+                <div class="user-name">Geoff McIntyre</div>
+                <div class="user-title">Mr. Industries Staff</div>
+              </div>
+            </div>
+            <h3>E-Bike Controller</h3>
+            <div class="project-photo-placeholder">
+              <a href="#">
+                <img src="images/IMG_20250104_124751_386.jpg" alt="E-Bike Controller">
+              </a>
+            </div>
+            <div class="time-comparison">
+              <div class="time-box estimated-time">
+                <h4>PREVIOUS</h4>
+                <p><strong>Clunky</strong></p>
+                <p class="small-text">Many wires</p>
+              </div>
+              <div class="time-box actual-time">
+                <h4>TINYCORE</h4>
+                <p><strong>Compact</strong></p>
+                <p class="small-text">Clean setup</p>
+              </div>
+            </div>
+            <span class="project-type-tag core-only">Core Only</span>
+          </div>
+          <!-- CyberJacket -->
+          <div class="gallery-item">
+            <div class="user-profile">
+              <div class="profile-icon">💡</div>
+              <div class="user-info">
+                <div class="user-name">Aiden Reeves</div>
+                <div class="user-title">Cosplayer</div>
+              </div>
+            </div>
+            <h3>The "CyberJacket"</h3>
+            <div class="project-photo-placeholder">
+              <a href="https://www.instructables.com/CyberJacket/">
+                <img src="images/cyberjacket.jpg" alt="LED Smart Controller">
+              </a>
+            </div>
+            <div class="time-comparison">
+              <div class="time-box without-tinycore">
+                <h4>OLD WAY</h4>
+                <p><strong>Frustrating</strong></p>
+                <p class="small-text">Debugging drivers</p>
+              </div>
+              <div class="time-box with-tinycore">
+                <h4>TINYCORE</h4>
+                <p><strong>Instant</strong></p>
+                <p class="small-text">Works out of box</p>
+              </div>
+            </div>
+            <span class="project-type-tag core-only">Core + tinyGlow</span>
+          </div>
+          <!-- Smart Watch -->
+          <div class="gallery-item">
+            <div class="user-profile">
+              <div class="profile-icon">⌚</div>
+              <div class="user-info">
+                <div class="user-name">Geoff McIntyre</div>
+                <div class="user-title">Mr. Industries Staff</div>
+              </div>
+            </div>
+            <h3>Custom Smart Watch</h3>
+            <div class="project-photo-placeholder">
+              <a href="#">
+                <img src="images/smartwatch.jpg" alt="Custom Smart Watch">
+              </a>
+            </div>
+            <div class="time-comparison">
+              <div class="time-box without-tinycore">
+                <h4>TRADITIONAL</h4>
+                <p><strong>Complex</strong></p>
+                <p class="small-text">Multiple boards</p>
+              </div>
+              <div class="time-box with-tinycore">
+                <h4>TINYCORE</h4>
+                <p><strong>Integrated</strong></p>
+                <p class="small-text">All-in-one</p>
+              </div>
+            </div>
+            <span class="project-type-tag core-expansion">Core + tinyDisplay</span>
+            <p class="testimonial">We built this as a demo of the tinyDisplay Expansion. Build your own smartwatch in minutes!</p>
+          </div>
+          <!-- Duplicate items for infinite scroll -->
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="modules">
     <div class="container">
       <h2 class="section-title">Meet the tinyFamily</h2>
       <div class="modules-grid">
         <a href="https://mr.industries/tiny-core" class="module-card">
-          <i class="material-icons module-icon">memory</i>
-          <h3>tinyCore</h3>
-          <p>ESP32 microcontroller with SD Card, USB-C, LiPo battery management, and 6DOF IMU for motion tracking.</p>
-          <span class="module-tag">Core Module</span>
+          <div class="module-image-wrapper">
+            <img src="images/tinyCoreNoGlow.png" alt="tinyCore Module" class="module-image">
+            <span class="module-tag core-module-tag">Core Module</span>
+          </div>
+          <div class="module-content">
+            <h3>tinyCore</h3>
+            <p>ESP32 microcontroller with SD Card, USB-C, LiPo battery management, and 6DOF IMU for motion tracking.</p>
+          </div>
         </a>
 
         <a href="https://emphasized-crop-755.notion.site/tinyDisplay-19c67bb8fd9480c59175ca8bd22b7475" class="module-card">
-          <i class="material-icons module-icon">display_settings</i>
-          <h3>tinyDisplay</h3>
-          <p>Add visual output and touch interaction to your wearable projects.</p>
-          <span class="module-tag">Expansion HAT</span>
+          <div class="module-image-wrapper">
+            <img src="images/tinyDisplay.png" alt="tinyDisplay Module" class="module-image">
+            <span class="module-tag expansion-hat-tag">Expansion HAT</span>
+          </div>
+          <div class="module-content">
+            <h3>tinyDisplay</h3>
+            <p>Add visual output and touch interaction to your wearable projects.</p>
+          </div>
         </a>
 
         <a href="https://emphasized-crop-755.notion.site/tinyGlow-19f67bb8fd9480e29a0ced3b1cbe6408" class="module-card">
-          <i class="material-icons module-icon">lightbulb</i>
-          <h3>tinyGlow</h3>
-          <p>Programmable LED lighting and visual feedback system for interactive projects.</p>
-          <span class="module-tag">Expansion HAT</span>
+          <div class="module-image-wrapper">
+            <img src="images/tinyGlow.png" alt="tinyGlow Module" class="module-image">
+            <span class="module-tag expansion-hat-tag">Expansion HAT</span>
+          </div>
+          <div class="module-content">
+            <h3>tinyGlow</h3>
+            <p>Programmable LED lighting and visual feedback system for interactive projects.</p>
+          </div>
         </a>
 
         <a href="https://emphasized-crop-755.notion.site/tinyVoice-1a167bb8fd9480449989d9e702ce0e93" class="module-card">
-          <i class="material-icons module-icon">record_voice_over</i>
-          <h3>tinyVoice</h3>
-          <p>Add voice control and natural language processing to your projects.</p>
-          <span class="module-tag">Expansion HAT</span>
+          <div class="module-image-wrapper">
+            <img src="images/tinyVoice.png" alt="tinyVoice Module" class="module-image">
+            <span class="module-tag expansion-hat-tag">Expansion HAT</span>
+          </div>
+          <div class="module-content">
+            <h3>tinyVoice</h3>
+            <p>Add voice control and natural language processing to your projects.</p>
+          </div>
         </a>
 
         <a href="https://emphasized-crop-755.notion.site/tinySniff-19c67bb8fd948074b345e73824b4dcbf" class="module-card">
-          <i class="material-icons module-icon">air</i>
-          <h3>tinySniff</h3>
-          <p>Monitor air quality, gas levels, and environmental conditions.</p>
-          <span class="module-tag">Expansion HAT</span>
+          <div class="module-image-wrapper">
+            <img src="images/tinySniff.png" alt="tinySniff Module" class="module-image">
+            <span class="module-tag expansion-hat-tag">Expansion HAT</span>
+          </div>
+          <div class="module-content">
+            <h3>tinySniff</h3>
+            <p>Monitor air quality, gas levels, and environmental conditions.</p>
+          </div>
         </a>
 
         <a href="https://emphasized-crop-755.notion.site/tinyProto-1a167bb8fd9480358fcde2516cb901eb" class="module-card">
-          <i class="material-icons module-icon">psychology</i>
-          <h3>tinyProto</h3>
-          <p>Build your own projects seamlessly. Prototype quickly, launch your own idea.</p>
-          <span class="module-tag">Expansion HAT</span>
+          <div class="module-image-wrapper">
+            <img src="images/tinyProto.png" alt="tinyProto Module" class="module-image">
+            <span class="module-tag expansion-hat-tag">Expansion HAT</span>
+          </div>
+          <div class="module-content">
+            <h3>tinyProto</h3>
+            <p>Build your own projects seamlessly. Prototype quickly, launch your own idea.</p>
+          </div>
         </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="gallery">
-    <div class="container">
-      <h2>Built with tinyCore</h2>
-      <div class="gallery-wheel">
-        <div class="gallery-track">
-          <div class="gallery-item">
-            <img src="images/IMG_20241005_225656_381.jpg" alt="Haunted Telephone">
-            <div class="gallery-content">
-              <h3>Haunted Telephone</h3>
-              <p>Interactive art installation using voice recognition and AI</p>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="images/IMG_20241128_105128_348.jpg" alt="OpenHEG Brain Computer Interface">
-            <div class="gallery-content">
-              <h3>OpenHEG: Brain Computer Interface</h3>
-              <p>Open source brain-computer interface for neurofeedback research</p>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="images/20201007_174746.jpg" alt="AI Talking Fish">
-            <div class="gallery-content">
-              <h3>AI Talking Fish</h3>
-              <p>Voice-enabled animatronic companion using GPT and TTS</p>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="images/IMG_20241219_143828_128.jpg" alt="Long Distance Message Box">
-            <div class="gallery-content">
-              <h3>Long Distance Message Box</h3>
-              <p>IoT-enabled messaging device for staying connected</p>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="images/IMG_20250104_124751_386.jpg" alt="E-Bike Controller">
-            <div class="gallery-content">
-              <h3>E-Bike Controller</h3>
-              <p>Custom electric bike motor control system</p>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="images/image-1.png" alt="LED Smart Controller">
-            <div class="gallery-content">
-              <h3>LED Smart Controller</h3>
-              <p>IoT-enabled LED control system for smart lighting</p>
-            </div>
-          </div>
-          <!-- Duplicate items for infinite scroll -->
-          <div class="gallery-item">
-            <img src="images/IMG_20241005_225656_381.jpg" alt="Haunted Telephone">
-            <div class="gallery-content">
-              <h3>Haunted Telephone</h3>
-              <p>Interactive art installation using voice recognition and AI</p>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="images/IMG_20241128_105128_348.jpg" alt="OpenHEG Brain Computer Interface">
-            <div class="gallery-content">
-              <h3>OpenHEG: Brain Computer Interface</h3>
-              <p>Open source brain-computer interface for neurofeedback research</p>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="images/20201007_174746.jpg" alt="AI Talking Fish">
-            <div class="gallery-content">
-              <h3>AI Talking Fish</h3>
-              <p>Voice-enabled animatronic companion using GPT and TTS</p>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="images/IMG_20241219_143828_128.jpg" alt="Long Distance Message Box">
-            <div class="gallery-content">
-              <h3>Long Distance Message Box</h3>
-              <p>IoT-enabled messaging device for staying connected</p>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="images/IMG_20250104_124751_386.jpg" alt="E-Bike Controller">
-            <div class="gallery-content">
-              <h3>E-Bike Controller</h3>
-              <p>Custom electric bike motor control system</p>
-            </div>
-          </div>
-          <div class="gallery-item">
-            <img src="images/image-1.png" alt="LED Smart Controller">
-            <div class="gallery-content">
-              <h3>LED Smart Controller</h3>
-              <p>IoT-enabled LED control system for smart lighting</p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -317,6 +564,91 @@
       nav.style.background = 'rgba(10, 15, 45, 0.9)';
     }
   });
-  </script>
+
+  // Click and drag scrolling for gallery
+  const galleryWheel = document.querySelector('.gallery-wheel');
+  const galleryTrack = document.querySelector('.gallery-track');
+  
+  let scrollSpeed = 0.5; // pixels per frame
+  let animationFrameId;
+  let isDragging = false;
+  let startX;
+  let scrollLeft;
+  let galleryItems;
+  let itemWidth;
+
+  // Function to initialize or re-initialize carousel dimensions
+  function initializeCarouselDimensions() {
+    galleryItems = document.querySelectorAll('.gallery-item');
+    if (galleryItems.length > 0) {
+      itemWidth = galleryItems[0].offsetWidth + 32; // Item width + gap (2rem = 32px)
+    }
+  }
+
+  // Duplicate items for seamless loop and initialize dimensions
+  const originalContent = galleryTrack.innerHTML;
+  galleryTrack.innerHTML += originalContent + originalContent; // Duplicate twice for better looping
+  initializeCarouselDimensions(); // Initialize dimensions after duplicating content
+
+  function startAutoScroll() {
+    function animateScroll() {
+      if (!isDragging) {
+        galleryWheel.scrollLeft += scrollSpeed;
+
+        // If scrolled past the original content, jump back to start of duplicated content
+        // We duplicated twice, so scroll back when past the first duplicate
+        if (galleryWheel.scrollLeft >= galleryTrack.scrollWidth / 3) { 
+          galleryWheel.scrollLeft -= galleryTrack.scrollWidth / 3;
+        }
+      }
+      animationFrameId = requestAnimationFrame(animateScroll);
+    }
+    animateScroll();
+  }
+
+  function stopAutoScroll() {
+    cancelAnimationFrame(animationFrameId);
+  }
+
+  // Start auto-scroll initially after a small delay to ensure DOM is ready
+  setTimeout(startAutoScroll, 100);
+
+  galleryWheel.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    stopAutoScroll(); // Pause auto-scroll on drag start
+    galleryWheel.classList.add('active');
+    startX = e.pageX - galleryWheel.offsetLeft;
+    scrollLeft = galleryWheel.scrollLeft;
+  });
+
+  galleryWheel.addEventListener('mouseleave', () => {
+    if (isDragging) {
+      isDragging = false;
+      galleryWheel.classList.remove('active');
+      setTimeout(startAutoScroll, 500); // Resume auto-scroll after a short delay
+    }
+  });
+
+  galleryWheel.addEventListener('mouseup', () => {
+    isDragging = false;
+    galleryWheel.classList.remove('active');
+    setTimeout(startAutoScroll, 500); // Resume auto-scroll after a short delay
+  });
+
+  galleryWheel.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - galleryWheel.offsetLeft;
+    const walk = (x - startX) * 2; //scroll-fast
+    galleryWheel.scrollLeft = scrollLeft - walk;
+  });
+
+  // Handle resize to adjust scroll position if necessary (optional, but good practice)
+  window.addEventListener('resize', () => {
+    // Recalculate itemWidth if dynamic, or just ensure scroll position is valid
+    // For this basic auto-scroll, we mostly rely on scrollWidth/2
+    initializeCarouselDimensions(); // Re-initialize dimensions on resize
+  });
+</script>
 
 </body></html>
