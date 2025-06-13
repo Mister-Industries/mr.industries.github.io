@@ -13,6 +13,15 @@
     vertical-align: middle;
     margin-right: 8px;
   }
+  @media (max-width: 900px) {
+    .open-source-flex {
+      flex-direction: column !important;
+      align-items: center !important;
+    }
+    .open-source-flex .image-stack {
+      margin-bottom: 2rem !important;
+    }
+  }
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-93QSYCNXQS"></script> 
 <script>
@@ -491,33 +500,60 @@
     </div>
   </section>
 
-  <section class="specs">
+  <section class="open-source-hardware" style="margin-top: 3rem; background: var(--secondary); padding: 3rem 0;">
     <div class="container">
-      <h2>Core Specifications</h2>
-      <div class="specs-grid">
-        <div class="spec-item">
-          <h4>Processing</h4>
-          <p>ESP32-S3 Dual-Core Microcontroller</p>
+      <h2 class="section-title" style="color: #fff; text-align: center; margin-bottom: 2.2rem;">Open-Source Hardware</h2>
+      <div class="open-source-flex" style="display: flex; flex-direction: row; align-items: center; justify-content: center; gap: 4.5rem; flex-wrap: wrap;">
+        <div class="image-stack" style="position: relative; width: 420px; height: 280px; min-width: 320px; margin-bottom: 2.5rem; cursor: pointer; flex-shrink: 0; flex-basis: 420px;">
+          <img src="images/schematic2.png" class="stack-img" style="position: absolute; top: 0; left: 0; width: 100%; box-shadow: 0 4px 24px rgba(0,0,0,0.10); transform: rotate(-7deg); z-index: 1; transition: transform 0.4s, z-index 0.4s;">
+          <img src="images/schematic1.png" class="stack-img" style="position: absolute; top: 0; left: 0; width: 100%; box-shadow: 0 4px 24px rgba(0,0,0,0.10); transform: rotate(6deg); z-index: 2; transition: transform 0.4s, z-index 0.4s;">
+          <img src="images/schematic3.png" class="stack-img" style="position: absolute; top: 0; left: 0; width: 100%; box-shadow: 0 4px 24px rgba(0,0,0,0.10); transform: rotate(-2deg); z-index: 3; transition: transform 0.4s, z-index 0.4s;">
+          <img src="images/oshw-logo-filled-color.png" alt="Open Source Hardware Logo" style="position: absolute; bottom: -5px; right: -15px; width: 70px; height: 70px; z-index: 10; box-shadow: 0 2px 12px rgba(0,0,0,0.18); background: #fff; border-radius: 0.5rem; padding: 6px;">
         </div>
-        <div class="spec-item">
-          <h4>Storage</h4>
-          <p>Integrated SD Card slot</p>
+        <div style="max-width: 700px; width: 100%; text-align: left; color: #fff; flex: 1 1 350px; min-width: 260px;">
+          <div style="color: var(--accent); font-weight: 600; font-size: 1.08rem; margin-bottom: 0.7rem;">OSHWA ID: US002730</div>
+          <p style="font-size: 1.15rem; margin-bottom: 2.2rem; color: #fff;">tinyCore is an engineering learning platform built around a truly open-source (open-knowledge) microcontroller, empowering the next generation of embedded engineers. Our mission is to bridge the gap between university and industry, equipping makers, students, and professionals with the tools, knowledge, and community they need to build their portfolio and bring their ideas to life. Every schematic, PCB, and line of code is open and accessible—because innovation should be for everyone.</p>
+          <div style="margin-bottom: 1.5rem; font-size: 1.08rem; color: #fff;"></div>
+          <a href="https://github.com/Mister-Industries/tinyCore" class="button button-primary" style="margin-top: 0.5rem;">Check out the GitHub!</a>
         </div>
-        <div class="spec-item">
-          <h4>Power</h4>
-          <p>USB-C with LiPo charging circuit</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="get-involved" style="margin-top: 4rem;">
+    <div class="container">
+      <h2 class="section-title">Get Involved</h2>
+      <div class="get-involved-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2.5rem; align-items: stretch;">
+        <!-- Discord -->
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <h2 style="margin-bottom: -1.5rem; margin-top: 0; font-size: 1.5rem; font-weight: 800; color: var(--accent); text-shadow: 0 2px 8px rgba(0,0,0,0.10); letter-spacing: 0.5px; z-index: 2; position: relative; background: rgba(255,255,255,0.18); padding: 0.5rem 1.2rem; border-radius: 1.2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.08); display: inline-block;">Join the Discord</h2>
+          <div class="involved-card" style="background: var(--secondary); border-radius: 1rem; box-shadow: 0 2px 16px rgba(0,0,0,0.10); padding: 2rem 2rem 2rem 2rem; display: flex; flex-direction: column; align-items: center; color: #fff; width: 100%;">
+            <img src="images/IMG_2650.JPG" alt="Students at event" style="width: 100%; max-width: 100%; border-top-left-radius: 1rem; border-top-right-radius: 1rem; border-bottom-left-radius: 0; border-bottom-right-radius: 0; margin: 0; padding: 0; object-fit: cover; aspect-ratio: 4/3; display: block;">
+            <p style="font-size: 1rem; margin-bottom: 0.5rem; color: #fff; margin-top: 1.2rem;">Our Discord server provides weekly office hours, community hackathons, project showcases, and technical support. We'd love to see you there.</p>
+            <p style="font-size: 0.97rem; color: var(--accent); margin-bottom: 0.5rem;">Stay updated with our latest developments and industry insights by following us on LinkedIn and BlueSky.</p>
+            <a href="https://discord.gg/hvJZhwfQsF" class="button button-secondary" style="margin-top: 1.2rem;">Join Discord</a>
+          </div>
         </div>
-        <div class="spec-item">
-          <h4>Motion Sensing</h4>
-          <p>6-Axis IMU (Accelerometer + Gyroscope)</p>
+        <!-- Contributing -->
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <h2 style="margin-bottom: -1.5rem; margin-top: 0; font-size: 1.5rem; font-weight: 800; color: var(--accent); text-shadow: 0 2px 8px rgba(0,0,0,0.10); letter-spacing: 0.5px; z-index: 2; position: relative; background: rgba(255,255,255,0.18); padding: 0.5rem 1.2rem; border-radius: 1.2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.08); display: inline-block;">Contributing</h2>
+          <div class="involved-card" style="background: var(--secondary); border-radius: 1rem; box-shadow: 0 2px 16px rgba(0,0,0,0.10); padding: 2rem 2rem 2rem 2rem; display: flex; flex-direction: column; align-items: center; color: #fff; width: 100%;">
+            <img src="images/IMG_2420 (1).JPG" alt="Contributing" style="width: 100%; max-width: 100%; border-top-left-radius: 1rem; border-top-right-radius: 1rem; border-bottom-left-radius: 0; border-bottom-right-radius: 0; margin: 0; padding: 0; object-fit: cover; aspect-ratio: 4/3; display: block;">
+            <p style="font-size: 1rem; margin-bottom: 0.5rem; color: #fff; margin-top: 1.2rem;">All contributions are welcome. Start by forking our repository and checking out our contribution guidelines.</p>
+            <p style="font-size: 0.97rem; color: var(--accent); margin-bottom: 0.5rem;">Not into coding? Help improve our documentation, share your project builds, or assist others in our Discord community.</p>
+            <a href="https://github.com/Mister-Industries/tinyCore/blob/main/CONTRIBUTING.md" class="button button-secondary" style="margin-top: 1.2rem;">Contribution Guide</a>
+          </div>
         </div>
-        <div class="spec-item">
-          <h4>Connectivity</h4>
-          <p>WiFi 802.11 b/g/n + Bluetooth 5.0 LE</p>
-        </div>
-        <div class="spec-item">
-          <h4>Interfaces</h4>
-          <p>I2C, Serial, STEMMA/QWIIC, 6 Analog & 6 Digital I/O</p>
+        <!-- Share Your Thoughts -->
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <h2 style="margin-bottom: -1.5rem; margin-top: 0; font-size: 1.5rem; font-weight: 800; color: var(--accent); text-shadow: 0 2px 8px rgba(0,0,0,0.10); letter-spacing: 0.5px; z-index: 2; position: relative; background: rgba(255,255,255,0.18); padding: 0.5rem 1.2rem; border-radius: 1.2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.08); display: inline-block;">Share Your Thoughts</h2>
+          <div class="involved-card" style="background: var(--secondary); border-radius: 1rem; box-shadow: 0 2px 16px rgba(0,0,0,0.10); padding: 2rem 2rem 2rem 2rem; display: flex; flex-direction: column; align-items: center; color: #fff; width: 100%;">
+            <img src="images/IMG_2740.JPG" alt="Share Your Thoughts" style="width: 100%; max-width: 100%; border-top-left-radius: 1rem; border-top-right-radius: 1rem; border-bottom-left-radius: 0; border-bottom-right-radius: 0; margin: 0; padding: 0; object-fit: cover; aspect-ratio: 4/3; display: block;">
+            <p style="font-size: 1rem; margin-bottom: 0.5rem; color: #fff; margin-top: 1.2rem;">Your feedback is important to us!</p>
+            <p style="font-size: 0.97rem; color: var(--accent); margin-bottom: 0.5rem;">Share feature requests and bug reports through GitHub Issues, or reach out directly at <a href="mailto:support@mr.industries" style="color: var(--accent); text-decoration: underline;">support@mr.industries</a>.</p>
+            <p style="font-size: 0.97rem; color: #fff;">Our team reviews all suggestions and typically responds within 24 hours.</p>
+            <a href="https://github.com/Mister-Industries/tinyCore/issues" class="button button-secondary" style="margin-top: 1.2rem;">Open an Issue</a>
+          </div>
         </div>
       </div>
     </div>
@@ -675,6 +711,28 @@
     // For this basic auto-scroll, we mostly rely on scrollWidth/2
     initializeCarouselDimensions(); // Re-initialize dimensions on resize
   });
+
+  // Image stack hover effect for Open-Source Hardware section
+  const imageStack = document.querySelector('.image-stack');
+  if (imageStack) {
+    const imgs = imageStack.querySelectorAll('.stack-img');
+    imageStack.addEventListener('mouseenter', () => {
+      imgs[0].style.transform = 'translate(-30px, 10px) rotate(-15deg) scale(1.04)';
+      imgs[0].style.zIndex = 1;
+      imgs[1].style.transform = 'translate(0, 0) rotate(0deg) scale(1.08)';
+      imgs[1].style.zIndex = 3;
+      imgs[2].style.transform = 'translate(30px, 10px) rotate(12deg) scale(1.04)';
+      imgs[2].style.zIndex = 2;
+    });
+    imageStack.addEventListener('mouseleave', () => {
+      imgs[0].style.transform = 'rotate(-7deg)';
+      imgs[0].style.zIndex = 1;
+      imgs[1].style.transform = 'rotate(6deg)';
+      imgs[1].style.zIndex = 2;
+      imgs[2].style.transform = 'rotate(-2deg)';
+      imgs[2].style.zIndex = 3;
+    });
+  }
 </script>
 
 </body></html>
