@@ -315,20 +315,20 @@ body {
 }
 
 .modules {
-  padding: 6rem 0;
+  padding: 3rem 0;
   background: rgba(26, 31, 77, 0.85);
   margin-top: 0;
 }
 
 .modules .container {
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 
 .section-title {
   color: var(--text);
   font-size: 2.5rem;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .modules-grid {
@@ -524,8 +524,8 @@ body {
 }
 
 .gallery {
-  padding: 6rem 0;
-  background: rgba(26, 31, 77, 0.85);
+  padding: 3rem 0;
+  background: transparent;
   margin-top: 0;
 }
 
@@ -574,7 +574,7 @@ body {
 .gallery-item {
   min-width: 280px;
   max-width: calc(20vw - 1.5rem);
-  background: rgba(255,255,255,0.05);
+  background: var(--secondary);
   border-radius: 15px;
   display: flex;
   flex-direction: column;
@@ -888,4 +888,78 @@ li::before {
 
 .core-expansion {
   background-color: #f7a400; /* A new distinct color, e.g., orange */
+}
+
+.story-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.story-text {
+  flex: 1;
+  background: var(--secondary);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.story-text p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  opacity: 0.8;
+}
+
+.story-image {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  padding: 0;
+  border-radius: 12px;
+  box-shadow: none;
+}
+
+.story-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}
+
+.image-caption {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .story-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .story-image {
+    order: -1;
+  }
+}
+
+.our-story {
+  padding: 2rem 0 4rem;
+}
+
+.our-story .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.our-story .section-title {
+  margin-bottom: 0.5rem;
 }
