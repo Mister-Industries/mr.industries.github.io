@@ -27,7 +27,7 @@ body {
 .nav {
     position: fixed;
     width: 100%;
-    padding: 1.5rem 0;
+    padding: 0.75rem 0;
     background: rgba(10, 15, 45, 0.95);
     backdrop-filter: blur(10px);
     z-index: 100;
@@ -43,11 +43,29 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
+    display: flex;
+    align-items: center;
+}
+
+.core-gradient {
     background: linear-gradient(45deg, var(--accent), var(--accent2));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    font-weight: 700;
+}
+
+.by-mr {
+    font-size: 0.95rem;
+    color: var(--accent);
+    margin-left: 0.75rem;
+    margin-top: 0.55rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    vertical-align: middle;
 }
 
 /* Hamburger Menu Styles */
@@ -98,6 +116,319 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: start;
+    margin-bottom: 3rem;
+}
+
+.product-left {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.product-title {
+    font-size: 2rem;
+    margin-bottom: 0;
+    color: var(--text);
+}
+
+.main-image-container {
+    width: 100%;
+    aspect-ratio: 1;
+    background: rgba(255,255,255,0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.main-product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.product-right {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.product-price {
+    font-size: 3rem;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.stock-info {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.purchase-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: rgba(26,31,77,0.85);
+    padding: 2rem;
+    border-radius: 15px;
+}
+
+.option-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.option-group label {
+    font-weight: 600;
+    color: var(--text);
+}
+
+.option-select {
+    padding: 0.75rem;
+    border: 1px solid var(--grey);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.1);
+    color: var(--text);
+    font-family: inherit;
+}
+
+.quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.qty-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--grey);
+    background: rgba(255,255,255,0.1);
+    color: var(--text);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.qty-input {
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid var(--grey);
+    background: rgba(255,255,255,0.1);
+    color: var(--text);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.submit-button {
+    background: var(--accent);
+    color: var(--primary);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.shipping-info {
+    background: rgba(26,31,77,0.85);
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+.shipping-info p {
+    margin: 0.5rem 0;
+    color: var(--text);
+}
+
+/* Image Carousel */
+.image-carousel {
+    margin: 2rem 0;
+}
+
+.carousel-container {
+    display: flex;
+    gap: 0.75rem;
+    overflow-x: auto;
+    padding: 0.5rem 0;
+}
+
+.carousel-thumb {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.carousel-thumb.active {
+    border-color: var(--accent);
+}
+
+/* Content Tabs */
+.content-tabs {
+    margin-top: 4rem;
+}
+
+.tab-navigation {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--grey);
+    margin-bottom: 2rem;
+}
+
+.tab-btn {
+    padding: 1rem 2rem;
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+}
+
+.tab-btn:hover {
+    color: var(--accent);
+}
+
+.tab-content {
+    min-height: 400px;
+}
+
+.tab-panel {
+    display: none;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+.tab-panel h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+}
+
+.tab-panel h3 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem 0;
+    color: var(--accent);
+}
+
+.tab-panel p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: var(--text);
+}
+
+.tab-panel ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.tab-panel li {
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.kit-contents {
+    background: rgba(26,31,77,0.85);
+    border-radius: 15px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.kit-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.kit-item:last-child {
+    border-bottom: none;
+}
+
+.item-name {
+    color: var(--text);
+}
+
+.item-qty {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.spec-item {
+    background: rgba(26,31,77,0.85);
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.spec-item h4 {
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.spec-item p {
+    color: var(--text);
+    margin: 0;
+}
+
+.shipping-table, .pricing-table {
+    background: rgba(26,31,77,0.85);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.shipping-row, .pricing-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.pricing-row {
+    grid-template-columns: 1fr 1fr;
+}
+
+.shipping-row:last-child, .pricing-row:last-child {
+    border-bottom: none;
+}
+
+.shipping-row.header, .pricing-row.header {
+    background: rgba(0,240,255,0.1);
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.shipping-row span, .pricing-row span {
+    color: var(--text);
 }
 
 .gallery-container {
@@ -152,6 +483,7 @@ body {
     cursor: pointer;
     border: none;
     border-radius: 50%;
+    z-index: 10;
 }
 
 .gallery-prev {
@@ -166,17 +498,6 @@ body {
     padding: 2rem;
     background: rgba(26,31,77,0.85);
     border-radius: 15px;
-}
-
-.product-title {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.product-price {
-    font-size: 2rem;
-    color: var(--accent);
-    margin-bottom: 1.5rem;
 }
 
 .product-description {
@@ -228,19 +549,6 @@ body {
     flex-grow: 1;
 }
 
-.submit-button {
-    margin-top: 1.5rem;
-    background: var(--accent);
-    color: var(--primary);
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    width: 100%;
-    padding: 1rem;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
 .fine-print {
     font-size: 0.8rem;
     opacity: 0.7;
@@ -264,6 +572,10 @@ body {
 .package-items {
     list-style: none;
     margin-left: 1rem;
+}
+
+.package-items li::before {
+    content: none;
 }
 
 
@@ -320,26 +632,61 @@ body {
     }
     
     .product-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     
-    .gallery-container {
-        margin-bottom: 1rem;
+    .product-price {
+        font-size: 2.5rem;
+    }
+    
+    .purchase-options {
+        padding: 1.5rem;
     }
     
     .product-section {
         padding-top: 100px;
     }
 
-    .product-info {
-        padding: 1.5rem;
+    .carousel-container {
+        gap: 0.5rem;
     }
-
-    .payment-choice {
-        padding: 0.75rem;
+    
+    .carousel-thumb {
+        width: 80px;
+        height: 80px;
     }
-
-    .gallery-arrow {
-        padding: 0.75rem;
+    
+    .tab-navigation {
+        flex-wrap: wrap;
+    }
+    
+    .tab-btn {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .tab-panel h2 {
+        font-size: 1.5rem;
+    }
+    
+    .tab-panel h3 {
+        font-size: 1.2rem;
+    }
+    
+    .specs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .shipping-row, .pricing-row {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .shipping-row.header, .pricing-row.header {
+        display: none;
+    }
+    
+    .shipping-row span, .pricing-row span {
+        padding: 0.25rem 0;
     }
 }
