@@ -152,7 +152,7 @@ body {
 .product-right {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .product-price {
@@ -250,6 +250,63 @@ body {
     color: var(--text);
 }
 
+.student-discount {
+    background: rgba(0,240,255,0.1);
+    border: 1px solid var(--accent);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.student-discount p {
+    margin: 0;
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.student-discount-info {
+    background: rgba(0,240,255,0.05);
+    border: 1px solid rgba(0,240,255,0.2);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-top: 1.5rem;
+}
+
+.student-discount-info h4 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+.student-discount-info ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.student-discount-info ol li {
+    margin-bottom: 0.5rem;
+    color: var(--text);
+    list-style: decimal;
+}
+
+.student-discount-info ol li::before {
+    content: none;
+}
+
+.student-discount-info ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.student-discount-info ul li {
+    margin-bottom: 0.5rem;
+    color: var(--text);
+    list-style: disc;
+}
+
+.student-discount-info ul li::before {
+    content: none;
+}
+
 /* Image Carousel */
 .image-carousel {
     margin: 2rem 0;
@@ -277,6 +334,54 @@ body {
     border-color: var(--accent);
 }
 
+/* Content Sections */
+.content-section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: rgba(26,31,77,0.85);
+    border-radius: 15px;
+}
+
+.description-content {
+    background: rgba(26,31,77,0.85);
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+.description-content ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+    list-style: disc;
+}
+
+.description-content li {
+    margin-bottom: 0.5rem;
+    color: var(--text);
+    list-style: disc;
+}
+
+.description-content li::before {
+    content: none;
+}
+
+.specs-content {
+    background: rgba(26,31,77,0.85);
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+.shipping-content {
+    background: rgba(26,31,77,0.85);
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
+.pricing-content {
+    background: rgba(26,31,77,0.85);
+    padding: 1.5rem;
+    border-radius: 15px;
+}
+
 /* Content Tabs */
 .content-tabs {
     margin-top: 4rem;
@@ -287,6 +392,14 @@ body {
     gap: 0;
     border-bottom: 1px solid var(--grey);
     margin-bottom: 2rem;
+    position: sticky;
+    top: 80px;
+    background: rgba(26,31,77,0.85);
+    backdrop-filter: blur(10px);
+    z-index: 10;
+    padding: 1rem 0;
+    border-radius: 15px;
+    margin: 0 0 2rem 0;
 }
 
 .tab-btn {
@@ -314,38 +427,35 @@ body {
     min-height: 400px;
 }
 
-.tab-panel {
-    display: none;
-}
-
-.tab-panel.active {
+.content-section {
     display: block;
+    margin-bottom: 3rem;
 }
 
-.tab-panel h2 {
+.content-section h2 {
     font-size: 2rem;
     margin-bottom: 1.5rem;
     color: var(--text);
 }
 
-.tab-panel h3 {
+.content-section h3 {
     font-size: 1.5rem;
     margin: 2rem 0 1rem 0;
     color: var(--accent);
 }
 
-.tab-panel p {
+.content-section p {
     margin-bottom: 1rem;
     line-height: 1.6;
     color: var(--text);
 }
 
-.tab-panel ul {
+.content-section ul {
     margin: 1rem 0;
     padding-left: 2rem;
 }
 
-.tab-panel li {
+.content-section li {
     margin-bottom: 0.5rem;
     color: var(--text);
 }
@@ -665,11 +775,11 @@ body {
         font-size: 0.9rem;
     }
     
-    .tab-panel h2 {
+    .content-section h2 {
         font-size: 1.5rem;
     }
     
-    .tab-panel h3 {
+    .content-section h3 {
         font-size: 1.2rem;
     }
     

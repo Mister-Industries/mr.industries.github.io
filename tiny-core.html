@@ -164,6 +164,10 @@
                     <div class="product-price">$75.00</div>
                     <div class="stock-info">50 in stock</div>
                     
+                    <div class="student-discount">
+                        <p><strong>🎓 Student Discount:</strong> Get 20% off! Contact us with your student ID for a custom discount code.</p>
+                    </div>
+                    
                     <div class="purchase-options">
                         <div class="option-group">
                             <label for="enclosure-color">Enclosure Color:</label>
@@ -207,145 +211,170 @@
             <!-- Content Tabs -->
             <div class="content-tabs">
                 <div class="tab-navigation">
-                    <button class="tab-btn active" data-tab="description">Description</button>
-                    <button class="tab-btn" data-tab="specs">Specs</button>
-                    <button class="tab-btn" data-tab="shipping">Shipping</button>
-                    <button class="tab-btn" data-tab="pricing">Volume Pricing</button>
+                    <button class="tab-btn active" data-section="description">Description</button>
+                    <button class="tab-btn" data-section="specs">Specs</button>
+                    <button class="tab-btn" data-section="shipping">Shipping</button>
+                    <button class="tab-btn" data-section="pricing">Volume Pricing</button>
                 </div>
                 
                 <div class="tab-content">
-                    <!-- Description Tab -->
-                    <div id="description" class="tab-panel active">
-                        <h2>Stop fighting with confusing boot sequences and loose wires and start building amazing projects.</h2>
-                        <p>tinyCore eliminates the electronics nightmare that makes student makers feel stupid and give up. Whether you're a design student with a wearable idea, a CS major adding sensors to your project, or a mechanical engineer who just wants the electronics to work—tinyCore gets your electronics responding in minutes so you can focus on building something incredible.</p>
-                        
-                        <h3>Integrated sensors that just work:</h3>
-                        <ul>
-                            <li>Motion tracking (6DOF IMU) for gesture control, activity monitoring, and shake-to-wake</li>
-                            <li>WiFi and BLE connectivity for IoT projects and data sharing</li>
-                            <li>SD card storage for data logging and file management</li>
-                            <li>LiPo battery management for portable, wearable projects</li>
-                            <li>USB-C programming for fast, reliable connections</li>
-                        </ul>
-                        
-                        <h3>Easy expansion without breadboard hell:</h3>
-                        <p>STEMMA connectors let you add any Adafruit, SparkFun, SEEED Studio, and DFRobot sensor in seconds—no wire mess, no compatibility guessing, no connection debugging.</p>
-                        
-                        <h3>Perfect for:</h3>
-                        <p>Interactive art, smart wearables, IoT devices, motion-activated projects, data loggers, and any project where you want to focus on creativity instead of connectivity issues.</p>
-                        
-                        <p><strong>Turn "I'm too dumb for electronics" into "I can totally build this" with one weekend project.</strong></p>
-                        
-                        <h3>What's included in the Starter Kit:</h3>
-                        <div class="kit-contents">
-                            <div class="kit-item">
-                                <span class="item-name">tinyCore V2.0 Development Board</span>
-                                <span class="item-qty">1</span>
+                    <!-- Description Section -->
+                    <div id="description" class="content-section">
+                        <div class="description-content">
+                            <h2>Stop fighting with confusing boot sequences and loose wires and start building amazing projects.</h2>
+                            <p>tinyCore eliminates the electronics nightmare that makes student makers feel stupid and give up. Whether you're a design student with a wearable idea, a CS major adding sensors to your project, or a mechanical engineer who just wants the electronics to work—tinyCore gets your electronics responding in minutes so you can focus on building something incredible.</p>
+                            
+                            <h3>Integrated sensors that just work:</h3>
+                            <ul>
+                                <li>Motion tracking (6DOF IMU) for gesture control, activity monitoring, and shake-to-wake</li>
+                                <li>WiFi and BLE connectivity for IoT projects and data sharing</li>
+                                <li>SD card storage for data logging and file management</li>
+                                <li>LiPo battery management for portable, wearable projects</li>
+                                <li>USB-C programming for fast, reliable connections</li>
+                            </ul>
+                            
+                            <h3>Easy expansion without breadboard hell:</h3>
+                            <p>STEMMA connectors let you add any Adafruit, SparkFun, SEEED Studio, and DFRobot sensor in seconds—no wire mess, no compatibility guessing, no connection debugging.</p>
+                            
+                            <h3>Perfect for:</h3>
+                            <p>Interactive art, smart wearables, IoT devices, motion-activated projects, data loggers, and any project where you want to focus on creativity instead of connectivity issues.</p>
+                            
+                            <p><strong>Turn "I'm too dumb for electronics" into "I can totally build this" with one weekend project.</strong></p>
+                            
+                            <h3>What's included in the Starter Kit:</h3>
+                            <div class="kit-contents">
+                                <div class="kit-item">
+                                    <span class="item-name">tinyCore V2.0 Development Board</span>
+                                    <span class="item-qty">1</span>
+                                </div>
+                                <div class="kit-item">
+                                    <span class="item-name">3D-Printed Multi-color Snap Enclosure</span>
+                                    <span class="item-qty">1</span>
+                                </div>
+                                <div class="kit-item">
+                                    <span class="item-name">M3 Machine Screws (for Enclosure)</span>
+                                    <span class="item-qty">2</span>
+                                </div>
+                                <div class="kit-item">
+                                    <span class="item-name">Micro SD Card (4GB)</span>
+                                    <span class="item-qty">1</span>
+                                </div>
+                                <div class="kit-item">
+                                    <span class="item-name">USB Micro SD Card Reader</span>
+                                    <span class="item-qty">1</span>
+                                </div>
+                                <div class="kit-item">
+                                    <span class="item-name">STEMMA/QWIIC Cable Connector (100mm)</span>
+                                    <span class="item-qty">1</span>
+                                </div>
+                                <div class="kit-item">
+                                    <span class="item-name">USB-C Programming Cable (1m)</span>
+                                    <span class="item-qty">1</span>
+                                </div>
+                                <div class="kit-item">
+                                    <span class="item-name">Plastic Project Box (11.5x8.5x2.8cm)</span>
+                                    <span class="item-qty">1</span>
+                                </div>
+                                <div class="kit-item">
+                                    <span class="item-name">Secret sweet treat! 🤫</span>
+                                    <span class="item-qty">1</span>
+                                </div>
                             </div>
-                            <div class="kit-item">
-                                <span class="item-name">3D-Printed Multi-color Snap Enclosure</span>
-                                <span class="item-qty">1</span>
-                            </div>
-                            <div class="kit-item">
-                                <span class="item-name">M3 Machine Screws (for Enclosure)</span>
-                                <span class="item-qty">2</span>
-                            </div>
-                            <div class="kit-item">
-                                <span class="item-name">Micro SD Card (4GB)</span>
-                                <span class="item-qty">1</span>
-                            </div>
-                            <div class="kit-item">
-                                <span class="item-name">USB Micro SD Card Reader</span>
-                                <span class="item-qty">1</span>
-                            </div>
-                            <div class="kit-item">
-                                <span class="item-name">STEMMA/QWIIC Cable Connector (100mm)</span>
-                                <span class="item-qty">1</span>
-                            </div>
-                            <div class="kit-item">
-                                <span class="item-name">USB-C Programming Cable (1m)</span>
-                                <span class="item-qty">1</span>
-                            </div>
-                            <div class="kit-item">
-                                <span class="item-name">Plastic Project Box (11.5x8.5x2.8cm)</span>
-                                <span class="item-qty">1</span>
-                            </div>
-                            <div class="kit-item">
-                                <span class="item-name">Secret sweet treat! 🤫</span>
-                                <span class="item-qty">1</span>
-                            </div>
-                        </div>
-                        
-                        <p><strong>And as with all MR. INDUSTRIES products, tinyCore also includes Lifetime Kickass Support and Weekly Engineering Office Hours via Discord</strong></p>
-                    </div>
-                    
-                    <!-- Specs Tab -->
-                    <div id="specs" class="tab-panel">
-                        <h3>Technical Specifications</h3>
-                        <div class="specs-grid">
-                            <div class="spec-item">
-                                <h4>Microcontroller</h4>
-                                <p>ESP32-S3 Dual-Core 240MHz</p>
-                            </div>
-                            <div class="spec-item">
-                                <h4>Memory</h4>
-                                <p>8MB PSRAM, 16MB Flash</p>
-                            </div>
-                            <div class="spec-item">
-                                <h4>Connectivity</h4>
-                                <p>WiFi 802.11 b/g/n, Bluetooth 5.0</p>
-                            </div>
-                            <div class="spec-item">
-                                <h4>Sensors</h4>
-                                <p>6DOF IMU (MPU6050)</p>
-                            </div>
-                            <div class="spec-item">
-                                <h4>Power</h4>
-                                <p>LiPo Battery Management, USB-C</p>
-                            </div>
-                            <div class="spec-item">
-                                <h4>Storage</h4>
-                                <p>Micro SD Card Slot</p>
-                            </div>
+                            
+                            <p><strong>And as with all MR. INDUSTRIES products, tinyCore also includes Lifetime Kickass Support and Weekly Engineering Office Hours via Discord</strong></p>
                         </div>
                     </div>
                     
-                    <!-- Shipping Tab -->
-                    <div id="shipping" class="tab-panel">
-                        <h3>Shipping Information</h3>
-                        <div class="shipping-table">
-                            <div class="shipping-row header">
-                                <span>Service</span>
-                                <span>Tracked</span>
-                                <span>From</span>
-                                <span>First Item</span>
-                                <span>Additional</span>
-                            </div>
-                            <div class="shipping-row">
-                                <span>UPS Standard Ground</span>
-                                <span>Yes</span>
-                                <span>US</span>
-                                <span>$7.99</span>
-                                <span>$3.99</span>
+                    <!-- Specs Section -->
+                    <div id="specs" class="content-section">
+                        <div class="specs-content">
+                            <h3>Technical Specifications</h3>
+                            <div class="specs-grid">
+                                <div class="spec-item">
+                                    <h4>Microcontroller</h4>
+                                    <p>ESP32-S3 Dual-Core 240MHz</p>
+                                </div>
+                                <div class="spec-item">
+                                    <h4>Memory</h4>
+                                    <p>8MB PSRAM, 16MB Flash</p>
+                                </div>
+                                <div class="spec-item">
+                                    <h4>Connectivity</h4>
+                                    <p>WiFi 802.11 b/g/n, Bluetooth 5.0</p>
+                                </div>
+                                <div class="spec-item">
+                                    <h4>Sensors</h4>
+                                    <p>6DOF IMU (MPU6050)</p>
+                                </div>
+                                <div class="spec-item">
+                                    <h4>Power</h4>
+                                    <p>LiPo Battery Management, USB-C</p>
+                                </div>
+                                <div class="spec-item">
+                                    <h4>Storage</h4>
+                                    <p>Micro SD Card Slot</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Volume Pricing Tab -->
-                    <div id="pricing" class="tab-panel">
-                        <h3>Volume Pricing</h3>
-                        <div class="pricing-table">
-                            <div class="pricing-row header">
-                                <span>Quantity</span>
-                                <span>Price per Unit</span>
+                    <!-- Shipping Section -->
+                    <div id="shipping" class="content-section">
+                        <div class="shipping-content">
+                            <h3>Shipping Information</h3>
+                            <div class="shipping-table">
+                                <div class="shipping-row header">
+                                    <span>Service</span>
+                                    <span>Tracked</span>
+                                    <span>From</span>
+                                    <span>First Item</span>
+                                    <span>Additional</span>
+                                </div>
+                                <div class="shipping-row">
+                                    <span>UPS Standard Ground</span>
+                                    <span>Yes</span>
+                                    <span>US</span>
+                                    <span>$7.99</span>
+                                    <span>$3.99</span>
+                                </div>
                             </div>
-                            <div class="pricing-row">
-                                <span>1-4</span>
-                                <span>$75.00</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Volume Pricing Section -->
+                    <div id="pricing" class="content-section">
+                        <div class="pricing-content">
+                            <h3>Volume Pricing</h3>
+                            <div class="pricing-table">
+                                <div class="pricing-row header">
+                                    <span>Quantity</span>
+                                    <span>Price per Unit</span>
+                                </div>
+                                <div class="pricing-row">
+                                    <span>1-4</span>
+                                    <span>$75.00</span>
+                                </div>
+                                <div class="pricing-row">
+                                    <span>5+</span>
+                                    <span>Contact us for a quote</span>
+                                </div>
                             </div>
-                            <div class="pricing-row">
-                                <span>5+</span>
-                                <span>Contact us for a custom quote</span>
+                            
+                            <h3>Student Discount</h3>
+                            <p>We believe in supporting the next generation of engineers and makers! Students can receive a <strong>20% discount</strong> on all tinyCore products.</p>
+                            
+                            <div class="student-discount-info">
+                                <h4>How to get your student discount:</h4>
+                                <ol>
+                                    <li>Contact us via Discord, email, or GitHub with your student ID</li>
+                                    <li>We'll verify your student status and send you a custom discount code</li>
+                                    <li>Use the code during checkout for instant 20% off</li>
+                                </ol>
+                                <p><strong>Contact us:</strong></p>
+                                <ul>
+                                    <li>Discord: <a href="https://discord.gg/hvJZhwfQsF" style="color: var(--accent);">Message Geoff McIntyre</a></li>
+                                    <li>Email: <a href="mailto:support@mr.industries" style="color: var(--accent);">support@mr.industries</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -468,27 +497,56 @@
                 });
             });
 
-            // Tab functionality
+            // Tab functionality - scroll to sections
             const tabBtns = document.querySelectorAll('.tab-btn');
-            const tabPanels = document.querySelectorAll('.tab-panel');
             
             tabBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
-                    const targetTab = btn.getAttribute('data-tab');
+                    const targetSection = btn.getAttribute('data-section');
+                    const targetElement = document.getElementById(targetSection);
                     
-                    // Update active tab button
-                    tabBtns.forEach(b => b.classList.remove('active'));
-                    btn.classList.add('active');
-                    
-                    // Update active tab panel
-                    tabPanels.forEach(panel => {
-                        panel.classList.remove('active');
-                        if (panel.id === targetTab) {
-                            panel.classList.add('active');
-                        }
-                    });
+                    if (targetElement) {
+                        // Update active tab button
+                        tabBtns.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        
+                        // Smooth scroll to section
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
                 });
             });
+            
+            // Update active tab based on scroll position
+            function updateActiveTab() {
+                const sections = document.querySelectorAll('.content-section');
+                const tabBtns = document.querySelectorAll('.tab-btn');
+                
+                let currentSection = '';
+                const scrollPosition = window.scrollY + 200; // Offset for sticky nav
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        currentSection = section.id;
+                    }
+                });
+                
+                // Update active tab button
+                tabBtns.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.getAttribute('data-section') === currentSection) {
+                        btn.classList.add('active');
+                    }
+                });
+            }
+            
+            // Listen for scroll events to update active tab
+            window.addEventListener('scroll', updateActiveTab);
 
             // Quantity selector functionality
             window.changeQuantity = function(delta) {
