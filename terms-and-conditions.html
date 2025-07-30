@@ -35,7 +35,7 @@
         .nav {
             position: fixed;
             width: 100%;
-            padding: 1.5rem 0;
+            padding: 0.75rem 0;
             background: rgba(10, 15, 45, 0.95);
             backdrop-filter: blur(10px);
             z-index: 100;
@@ -48,16 +48,96 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 2rem;
             font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 1.5rem;
+            }
+            
+            .by-mr {
+                font-size: 0.8rem;
+                margin-left: 0.5rem;
+            }
+        }
+
+        .core-gradient {
             background: linear-gradient(45deg, var(--accent), var(--accent2));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+
+        .by-mr {
+            font-size: 0.95rem;
+            color: var(--accent);
+            margin-left: 0.75rem;
+            margin-top: 0.55rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            vertical-align: middle;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            padding: 4px;
+            z-index: 150;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: var(--text);
+            transition: all 0.3s ease;
         }
 
         .nav-links {
             display: flex;
             gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 250px;
+                flex-direction: column;
+                background: var(--primary);
+                padding: 80px 2rem 2rem;
+                transition: right 0.3s ease;
+                z-index: 100;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: translateY(9px) rotate(45deg);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg);
+            }
         }
 
         .nav-links a {
@@ -137,7 +217,17 @@
 <body>
     <nav class="nav">
         <div class="container nav-content">
-            <a href="https://mr.industries" style="text-decoration: none;"><div class="logo">MR.INDUSTRIES</div></a>
+            <a href="https://mr.industries" style="text-decoration: none;">
+                <div class="logo">
+                    <span style="color: white;">tiny</span><span class="core-gradient">ToS</span>
+                    <span class="by-mr">by MR.INDUSTRIES</span>
+                </div>
+            </a>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <div class="nav-links">
                 <a href="https://github.com/Mister-Industries/tinyCore">GitHub</a>
                 <a href="https://discord.gg/hvJZhwfQsF">Discord</a>
@@ -153,7 +243,7 @@
             <div class="terms-section">
                 <h2>Pre-order System</h2>
                 <ul>
-                    <li>Our products are manufactured in batches when we reach a minimum order quantity (MOQ) of 20 units, with a target of 50 units per batch</li>
+                    <li>Products without existing inventory are manufactured in batches when we reach a minimum order quantity (MOQ) of 20 units, with a target of 50 units per batch</li>
                     <li>The manufacturing cycle begins once MOQ is reached</li>
                     <li>Delivery occurs approximately 30 days after batch manufacturing begins</li>
                 </ul>
@@ -162,8 +252,8 @@
             <div class="terms-section">
                 <h2>Payment Options</h2>
                 <ul>
-                    <li>Full Starter Kit Payment: $45.99 + tax</li>
-                    <li>Board + Enclosure Only Payment: $35.99 + tax</li>
+                    <li>Full Starter Kit Payment: $75 + tax</li>
+                    <li>Basic Kit Payment: $62.50 + tax</li>
                 </ul>
             </div>
 
@@ -183,21 +273,22 @@
                 <h2>Refund Policy</h2>
                 <ul>
                     <li>Full refunds are provided if the minimum batch size is not reached within the specified timeframe</li>
-                    <li>Note: This is not a return policy. All sales are final once the product is delivered</li>
+                    <li>Note: <strong>We do NOT have a return policy.</strong> All sales are final once the product is delivered.</li>
                 </ul>
             </div>
 
             <div class="terms-section">
                 <h2>Shipping</h2>
                 <ul>
-                    <li>Products are shipped once batch manufacturing completes</li>
-                    <li>Products will be shipped via USPS or UPS Ground</li>
+                    <li>Products are shipped within 14 days, or once batch manufacturing completes</li>
+                    <li>Products will be shipped via USPS Ground Advantage or UPS Ground</li>
                     <li>You will be notified of tracking details once your product has shipped</li>
                 </ul>
                 <h2>Local Pickup</h2>
                 <ul>
                     <li>Products must be picked up locally (near CU Boulder campus)</li>
                     <li>You will be notified of pickup details when your product is ready</li>
+                    <li>We will contact you to schedule a pickup time and location for your product</li>
                 </ul>
             </div>
 
@@ -238,9 +329,46 @@
                 </div>
             </div>
             <div style="margin-top: 3rem; text-align: center; opacity: 0.6; border-top: 1px solid var(--grey); padding-top: 2rem;">
-                2024 McIntyre-Reeves Industries. All rights reserved.
+                Copyright 2025 McIntyre-Reeves Industries. All rights reserved.
             </div>
         </div>
     </footer>
+
+    <script>
+        // Hamburger menu functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+        
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Navbar background change on scroll
+        document.addEventListener('scroll', () => {
+            const nav = document.querySelector('.nav');
+            if (window.scrollY > 50) {
+                nav.style.background = 'rgba(10, 15, 45, 0.95)';
+            } else {
+                nav.style.background = 'rgba(10, 15, 45, 0.9)';
+            }
+        });
+    </script>
 </body>
 </html>
