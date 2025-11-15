@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    
+    <!-- Mobile-specific meta tags -->
+    <meta name="theme-color" content="#0a0f2d">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    
+    <!-- Basic Title -->
+    <title>tinyEKG</title>
+    
+    <!-- Prevent indexing -->
+    <meta name="robots" content="noindex, nofollow">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Existing CSS -->
+    <link href="css/tiny-core.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="nav">
+        <div class="container nav-content">
+            <a href="https://mr.industries" style="text-decoration: none;">
+                <div class="logo">
+                    <span style="color: white;">tiny</span><span class="core-gradient">Store</span>
+                    <span class="by-mr">by MR.INDUSTRIES</span>
+                </div>
+            </a>
+            <div class="hamburger" role="button" tabindex="0" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="nav-links">
+                <a href="https://github.com/Mister-Industries/tinyCore">GitHub</a>
+                <a href="https://discord.gg/hvJZhwfQsF">Discord</a>
+                <a href="https://docs.mr.industries">tinyDocs</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="product-section">
+        <div class="container">
+            <!-- Main Product Area -->
+            <div class="product-grid">
+                <!-- Left Column: Title and Main Image -->
+                <div class="product-left">
+                    <h1 class="product-title">tinyEKG - Heart Rate Monitoring & Analog Circuit Learning HAT</h1>
+                    <div class="main-image-container">
+                        <img src="images/tinyEKG.png" alt="EKG Hat Module" class="main-product-image" loading="eager">
+                    </div>
+                </div>
+                
+                <!-- Right Column: Purchase Options -->
+                <div class="product-right">
+                    <div class="product-price">$120.00</div>
+                    <div class="stock-info">Pre-order</div>
+                    
+                    <div class="purchase-options">
+                        <button id="payButton" class="submit-button" aria-describedby="payment-info">
+                            Pre-order - $120.00
+                        </button>
+                        <div id="payment-info" class="sr-only">Secure payment via Stripe</div>
+                    </div>
+                    
+                    <div class="shipping-info">
+                        <p><strong>Note:</strong> This is a pre-order. Product details and specifications are subject to change during development. Image is a sample rendering of the final product.</p>
+                    </div>
+                    
+                    <!-- Specs and Docs Buttons - Blurred for Pre-order -->
+                    <div class="specs-docs-grid pre-order-blurred">
+                        <a href="#" class="specs-docs-button" onclick="return false;" style="pointer-events: none;">
+                            <div class="button-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-1.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+                                </svg>
+                            </div>
+                            <div class="button-text">Source Code</div>
+                        </a>
+                        <a href="#" class="specs-docs-button" onclick="return false;" style="pointer-events: none;">
+                            <div class="button-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+                                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                                </svg>
+                            </div>
+                            <div class="button-text">Documentation</div>
+                        </a>
+                        <a href="#" class="specs-docs-button" onclick="return false;" style="pointer-events: none;">
+                            <div class="button-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                </svg>
+                            </div>
+                            <div class="button-text">Design Files</div>
+                        </a>
+                        <a href="#" class="specs-docs-button" onclick="return false;" style="pointer-events: none;">
+                            <div class="button-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                    <polyline points="14,2 14,8 20,8"/>
+                                    <line x1="16" y1="13" x2="8" y2="13"/>
+                                    <line x1="16" y1="17" x2="8" y2="17"/>
+                                    <polyline points="10,9 9,9 8,9"/>
+                                </svg>
+                            </div>
+                            <div class="button-text">Datasheet</div>
+                        </a>
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <!-- Content Tabs -->
+            <div class="content-tabs">
+                <div class="tab-navigation" role="tablist" aria-label="Product information tabs">
+                    <button class="tab-btn active" data-section="description" role="tab" aria-selected="true" aria-controls="description">Description</button>
+                    <button class="tab-btn" data-section="timeline" role="tab" aria-selected="false" aria-controls="timeline">Development Timeline</button>
+                </div>
+                
+                <div class="tab-content">
+                    <!-- Description Section -->
+                    <div id="description" class="content-section" role="tabpanel" aria-labelledby="description-tab">
+                        <div class="description-content">
+                            <h2>Monitor your heart rate and learn analog circuit design with this hands-on educational tool!</h2>
+                            <p>tinyEKG is an expansion HAT for tinyCore that enables accurate heart rate monitoring. This educational tool also demonstrates fundamental analog circuit principles with exposed pins for waveform measurement and analysis.</p>
+                            
+                            <h3>Key Features:</h3>
+                            <ul>
+                                <li><strong>Three-electrode configuration</strong> - Works with finger or chest placement for flexible monitoring</li>
+                                <li><strong>AD8227 instrumentation amplifier</strong> - Converts differential signals to single-ended output with 200x gain</li>
+                                <li><strong>Band pass filter</strong> - 0.1 Hz to 100 Hz range optimized for EKG signal detection</li>
+                                <li><strong>EKG waveform display</strong> - View real-time heart rate waveforms on connected displays</li>
+                                <li><strong>Test points throughout</strong> - Probe intermediate signals at various stages of the signal chain for educational purposes</li>
+                                <li><strong>2.5mm barrel jack connector</strong> - Standard PJ-327A connector for electrode cables</li>
+                                <li><strong>3D printed enclosure</strong> - Protective housing included</li>
+                                <li><strong>Sample code provided</strong> - Arduino Serial and Processing UI examples for basic demonstration</li>
+                            </ul>
+                            
+                            <p><strong>Pre-order now to secure your EKG Hat. This is a pre-order product—specifications and features may evolve during development.</strong></p>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Section -->
+                    <div id="timeline" class="content-section" role="tabpanel" aria-labelledby="timeline-tab">
+                        <div class="timeline-content">
+                            <h3>Development Timeline</h3>
+                            <div class="timeline-grid">
+                                <div class="timeline-item completed">
+                                    <div class="timeline-circle">✓</div>
+                                    <h4>Circuit Design</h4>
+                                    <p>Initial concept and analog circuit design</p>
+                                </div>
+                                <div class="timeline-item current">
+                                    <div class="timeline-circle">✓</div>
+                                    <h4>PCB Development</h4>
+                                    <p>PCB design in EasyEDA and prototype testing</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-circle">●</div>
+                                    <h4>Manufacturing</h4>
+                                    <p>Production samples and validation</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-circle">●</div>
+                                    <h4>Final Assembly</h4>
+                                    <p>Enclosure production and final testing</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer style="background: var(--secondary); padding: 4rem 0; margin-top: 4rem;">
+        <div class="container">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+            <div>
+              <h3 style="color: var(--accent); margin-bottom: 1rem;">MR.INDUSTRIES</h3>
+              <p style="opacity: 0.8;">Building the future through open-source innovation and education.</p>
+            </div>
+            <div>
+              <h4 style="color: var(--accent); margin-bottom: 1rem;">Quick Links</h4>
+              <ul style="list-style: none; position: relative;">
+                <style>
+                  li::before {
+                    content: "•";
+                    color: var(--accent);
+                    position: absolute;
+                    left: 0;
+                  }
+                </style>
+                <li style="margin-bottom: 0.5rem; position: relative; padding-left: 1rem;"><a href="https://mr.industries/terms-and-conditions" style="color: var(--text); text-decoration: none;">Terms and Conditions</a></li>
+                <li style="margin-bottom: 0.5rem; position: relative; padding-left: 1rem;"><a href="https://github.com/Mister-Industries/tinyCore" style="color: var(--text); text-decoration: none;">GitHub Repository</a></li>
+                <li style="margin-bottom: 0.5rem; position: relative; padding-left: 1rem;"><a href="https://docs.mr.industries" style="color: var(--text); text-decoration: none;">Documentation</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 style="color: var(--accent); margin-bottom: 1rem;">Contact</h4>
+              <ul style="list-style: none;">
+                <li style="margin-bottom: 0.5rem; position: relative; padding-left: 1rem;"><a href="https://discord.gg/hvJZhwfQsF" style="color: var(--text); text-decoration: none;">Join our Discord</a></li>
+                <li style="margin-bottom: 0.5rem; position: relative; padding-left: 1rem;"><a href="https://mr.industries" style="color: var(--text); text-decoration: none;">Subscribe to Updates</a></li>
+              </ul>
+            </div>
+          </div>
+          <div style="margin-top: 3rem; text-align: center; opacity: 0.6; border-top: 1px solid var(--grey); padding-top: 2rem;">
+            Copyright 2025 McIntyre-Reeves Industries. All rights reserved.
+          </div>
+        </div>
+      </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hamburger menu functionality
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.classList.toggle('active');
+                
+                // Update ARIA attributes
+                const isExpanded = navLinks.classList.contains('active');
+                hamburger.setAttribute('aria-expanded', isExpanded);
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!hamburger.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('active')) {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                }
+            });
+
+            // Close menu when clicking a link
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('active');
+                    hamburger.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // Tab functionality - scroll to sections
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetSection = btn.getAttribute('data-section');
+                    const targetElement = document.getElementById(targetSection);
+                    
+                    if (targetElement) {
+                        // Update active tab button
+                        tabBtns.forEach(b => {
+                            b.classList.remove('active');
+                            b.setAttribute('aria-selected', 'false');
+                        });
+                        btn.classList.add('active');
+                        btn.setAttribute('aria-selected', 'true');
+                        
+                        // Smooth scroll to section
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Update active tab based on scroll position
+            function updateActiveTab() {
+                const sections = document.querySelectorAll('.content-section');
+                const tabBtns = document.querySelectorAll('.tab-btn');
+                
+                let currentSection = '';
+                const scrollPosition = window.scrollY + 200; // Offset for sticky nav
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        currentSection = section.id;
+                    }
+                });
+                
+                // Update active tab button
+                tabBtns.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-selected', 'false');
+                    if (btn.getAttribute('data-section') === currentSection) {
+                        btn.classList.add('active');
+                        btn.setAttribute('aria-selected', 'true');
+                    }
+                });
+            }
+            
+            // Listen for scroll events to update active tab
+            window.addEventListener('scroll', updateActiveTab);
+
+            // Payment handling
+            const payButton = document.getElementById('payButton');
+            // TODO: Replace with actual Stripe payment link for EKG Hat
+            const STRIPE_PAYMENT_LINK = 'https://square.link/u/JlQVAkAr';
+            
+            payButton.addEventListener('click', () => {
+                // Redirect to Stripe payment link
+                window.location.href = STRIPE_PAYMENT_LINK;
+            });
+        });
+    </script>
+
+    <style>
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .timeline-item {
+            text-align: center;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--grey);
+        }
+        
+        .timeline-item.completed {
+            background: rgba(0, 240, 255, 0.1);
+            border-color: var(--accent);
+        }
+        
+        .timeline-item.current {
+            background: rgba(255, 63, 140, 0.1);
+            border-color: var(--accent2);
+        }
+        
+        .timeline-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 1rem;
+        }
+        
+        .timeline-item.completed .timeline-circle {
+            background: var(--accent);
+        }
+        
+        .timeline-item.current .timeline-circle {
+            background: var(--accent2);
+        }
+        
+        .timeline-item h4 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-item.current h4 {
+            color: var(--accent2);
+        }
+        
+        .timeline-item p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .pre-order-blurred {
+            filter: blur(3px);
+            opacity: 0.5;
+            pointer-events: none;
+            user-select: none;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+    </style>
+</body>
+</html>
+
